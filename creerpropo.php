@@ -8,7 +8,7 @@
 	<body>
 		<div id="container" >
 			<h2> Créer une nouvelle proposition </h2>
-			<form method="post" action="newpropo.php" > 
+			<form method="post" action="newpropo.php?idGroupe=<?php echo $_GET['idGroupe'] ?>" > 
 				<label> nom de la proposition </label>
 				<input  type="text" id="nompropo" name="nompropo" </input> 
 				<br/>
