@@ -2,6 +2,7 @@
     require_once("connect.php");
     
 
+
 class propositionFactory {
 
     public static function creer($nom, $descriptionCourte, $descriptionLongue, $idCategoriePrimaire, $idCategorieSecondaire, $dateLimite, $idUtilisateur, $idGroupe) {
