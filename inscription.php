@@ -39,6 +39,7 @@ require_once("connect.php");
                   <input type="password" name ="conf_password" class= "formulaire_reservation_confirmation_psw" required><br><br>
 
 
+                  <input type = "hidden" name="autoGroupe" value="<?php isset($_GET['autoGroupe']) {echo $_GET['autoGroupe']} ?>">
                   <input type="submit" id='submit' value='INSCRIPTION' >
                               
           </form>
