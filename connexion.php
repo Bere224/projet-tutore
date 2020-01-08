@@ -1,14 +1,17 @@
+<?php
+require_once("connect.php");
+?>
+
 <!doctype html>
 <html lang="fr">
     <head>
-       <meta charset="utf-8">
-        <!-- importer le fichier de style -->
-        <link rel="stylesheet" href="css2.css" media="screen" type="text/css" />
+        <meta charset="utf-8">
+        <title>accueil </title>
+        <link rel="stylesheet" type="text/css" href="css2.css" />
     </head>
     <body>
         <div id="container">
             <!-- zone de connexion -->
-            
             <form action="newconnection.php" method="POST">
                 <h1>Connexion</h1>
                 
@@ -27,13 +30,11 @@
                 }
                 ?>
                 <div class="text-center">
-                  <a class="small" href="inscription.php">Créer un compte</a></div>
+                  <a class="small" href="inscription.php">Créer un compte</a>
+                </div>
             </form>
         </div>
+      </section>
     </body>
-    <footer>
-    <?php
-        require_once("footer.php");
-    ?>
-</footer>
+
 </html>
