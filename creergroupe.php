@@ -10,7 +10,7 @@
             <h2> Entrez le nom du groupe à créer </h2>
             <form method="post" action="newgroupe.php" > 
                 <label> Nom du groupe :  </label>
-                <input  type="text" id="nomgrp" name="nomgrp" </input> 
+                <input  type="text" id="nomgrp" name="nomgrp"></input> 
                 <br/>
                 <br/>
                 <input class="button" type="submit" Value="créer">
