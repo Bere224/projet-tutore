@@ -13,12 +13,12 @@ $mdp = $_POST["password"];
 $connect = utilisateurFactory::connexion($login,$mdp);
 if($connect == false)
 {
-	header("Location:projet/connexion.php");
+	header("Location:projet/projet-tutore/connexion.php");
 }
 
 else 
 {
-	header("Location:/projet/accueil.php");
+	header("Location:/projet/projet-tutore/accueil.php");
 }
 
 
