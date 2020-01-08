@@ -17,7 +17,7 @@ $idGroupe = $_GET['idGroupe'];
 
 if($_POST['datechoix'] = 'sans')
 {
-	$datedecloture = '1999-00-00';
+	$datedecloture = '1999-01-01';
 }
 
 $propo = propositionFactory::creer($nompropo,$desccourte,$desclongue,$catprinc,$catsec,$datedecloture,$idConnecte,$idGroupe);
