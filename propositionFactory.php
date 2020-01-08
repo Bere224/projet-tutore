@@ -1,6 +1,6 @@
 <?php
-
-require_once("connect.php");
+    require_once("connect.php");
+    
     private $id;
     private $nom;
     private $descriptionCourte;

@@ -1,5 +1,4 @@
 <?php
-require_once('connect.php');
 
 $host = "localhost"; // ou 127.0.0.1
 $user = "root";
