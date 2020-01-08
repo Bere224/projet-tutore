@@ -21,7 +21,7 @@ class listeGroupeFactory {
     }
 
 
-    public static function listeGroupesPourUtilisateur($id) {
+    public static function listeGroupesPossedeParUtilisateur($id) {
 		global $co;
 		
 		$groupes = array();
@@ -34,6 +34,21 @@ class listeGroupeFactory {
 
 		return new listeGroupe($groupes);
     }
+
+    public static function listeGroupesPourUtilisateur($id) {
+		global $co;
+		
+		$groupes = array();
+		
+		$reponse = mysqli_query($co, "SELECT * FROM groupe NATURAL JOIN est_dans WHERE est_dans.ID='$id'") or die ("Exécution de la requête impossible".mysqli_error($co));
+		while($donnees = mysqli_fetch_array($reponse))
+		{
+			$groupes[] = new groupe($donnees['IDGroupe'],$donnees['libelle'],$donnees['dateCreation'],$donnees['nbSignalement'],$donnees['ID']);
+	    }
+
+		return new listeGroupe($groupes);
+    }
+
 
     public static function listeGroupesSignalement() {
 		global $co;
