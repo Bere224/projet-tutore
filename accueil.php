@@ -63,7 +63,7 @@ $prenom= $utilisateur->getPrenom();
 		
 		
 		<h2> groupes possédés: </h2>
-        <form method="post" action="groupeadmin.php" > 
+        <form method="post" action="voirgroupeadmin.php" > 
             <?php
             $listeGroupe = listeGroupeFactory::listeGroupesPossedeParUtilisateur($idConnecte);
             ?>
