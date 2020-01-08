@@ -2,14 +2,14 @@
 require_once("proposition.php");
 
 class listeProposition {
-	private $propositions;
+	private $proposition;
 
-	function __construct($propositions) {
-		$this->propositions = $propositions;
+	function __construct($proposition) {
+		$this->proposition = $proposition;
 	}
 
-	function getPropositions(){
-		return $this->propositions;
+	function getProposition(){
+		return $this->proposition;
 	}
 
 }

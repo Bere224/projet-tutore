@@ -16,7 +16,7 @@ class listePropositionFactory {
 			$propositions[] = new proposition($donnees['IDPropo'],$donnees['nompropo'],$donnees['descCourte'],$donnees['descLongue'],$donnees['catprinc'],$donnees['catsec'],$donnees['nbSignalement'],$donnees['dateLimite'],$donnees['dateDepassee'],$donnees['dateCreation'],$donnees['ID'],$donnees['IDGroupe']);
 	    }
 
-		return new listePropositions($propositions);
+		return new listeProposition($propositions);
     }
 
     public static function listePropositionPourGroupe($id) {
@@ -30,7 +30,7 @@ class listePropositionFactory {
 			$propositions[] = new proposition($donnees['IDPropo'],$donnees['nompropo'],$donnees['descCourte'],$donnees['descLongue'],$donnees['catprinc'],$donnees['catsec'],$donnees['nbSignalement'],$donnees['dateLimite'],$donnees['dateDepassee'],$donnees['dateCreation'],$donnees['ID'],$donnees['IDGroupe']);
 	    }
 
-		return new listePropositions($propositions);
+		return new listeProposition($propositions);
     }
 
     public static function listePropositionSignalement() {
@@ -44,7 +44,7 @@ class listePropositionFactory {
 			$propositions[] = new proposition($donnees['IDPropo'],$donnees['nompropo'],$donnees['descCourte'],$donnees['descLongue'],$donnees['catprinc'],$donnees['catsec'],$donnees['nbSignalement'],$donnees['dateLimite'],$donnees['dateDepassee'],$donnees['dateCreation'],$donnees['ID'],$donnees['IDGroupe']);
 	    }
 
-		return new listePropositions($propositions);
+		return new listeProposition($propositions);
     }
 
 
