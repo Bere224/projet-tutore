@@ -1,0 +1,131 @@
+body{
+   color:black;
+background-color:white;
+background:url(test.jpg);
+background-attachment:fixed;
+background-repeat:no-repeat;
+background-size: 1950px 970px;
+  
+}
+
+
+
+#container{
+    width:400px;
+    margin:0 auto;
+    margin-top:10%;
+}
+
+#container_home{
+    width : 400px;
+    margin-top: 15%;
+    margin-right: 20%;
+    margin-left: 36%;
+    padding: 30px;
+    border: 1px solid #f1f1f1;
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    margin:219 auto;
+}
+/* Bordered form */
+form {
+    width:100%;
+    padding: 30px;
+    border: 1px solid #f1f1f1;
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+#container h1{
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+h1{
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+	color : black;
+}
+
+
+    .button {
+  background-color: #53af57;
+    color: white;
+    padding: 13px 0px;
+    margin: -16px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 12px;
+    display : inline-block;
+    text-align: center;
+
+
+}
+a{
+    outline: none;
+      text-decoration: none;
+}
+
+.button:hover {
+    background-color: white;
+    color: #53af57;
+    border: 1px solid #53af57;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password], input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: .25rem;
+}
+
+
+/* Set a style for all buttons */
+input[type=submit] {
+    background-color: #53af57;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 12px;
+}
+input[type=submit]:hover {
+    background-color: white;
+    color: #53af57;
+    border: 1px solid #53af57;
+}
+.text-center{
+    text-align : center;
+    line-height : 2.2;
+}
+
+table {
+border: medium solid #6495ed;
+border-collapse: collapse;
+width: 50%;
+}
+
+th {
+font-family: monospace;
+border: thin solid #6495ed;
+width: 50%;
+padding: 5px;
+background-color: #D0E3FA;
+background-image: url(sky.jpg);
+}
+td {
+font-family: sans-serif;
+border: thin solid #6495ed;
+width: 50%;
+padding: 5px;
+text-align: center;
+background-color: #ffffff;
+}
