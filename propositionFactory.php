@@ -6,7 +6,7 @@
 class propositionFactory {
 
     public static function creer($nom, $descriptionCourte, $descriptionLongue, $idCategoriePrimaire, $idCategorieSecondaire, $dateLimite, $idUtilisateur, $idGroupe) {
-        $prop = new proposition(0,$nom ,$descriptionCourte, $descriptionLongue, $idCategoriePrimaire, $idCategorieSecondaire, 0, $dateLimite, false, date('Y-m-d'),$idUtilisateur,$idGroupe);
+        $prop = new proposition(0,$nom ,$descriptionCourte, $descriptionLongue, $idCategoriePrimaire, $idCategorieSecondaire, 0, $dateLimite, 0, date('Y-m-d'),$idUtilisateur,$idGroupe);
 
         //todo check conflit
 
