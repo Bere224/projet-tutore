@@ -1,13 +1,16 @@
 <?php
+
+/*
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-
 require './vendor/autoload.php';
+*/
 
 class emailEnvoi {
 
 	public function envoyer_email($adresseMail, $titre, $texte)
 	{
+/*
 		//voici comment utiliser PHP mailer en SMTP
 		$mail = new PHPMailer();
 		$mail->IsSMTP();
@@ -33,7 +36,8 @@ class emailEnvoi {
 		}
 
 		return true;
-
+*/
+		echo "Envoi d'un mail a $adresseMail    titre $titre    contenu $texte";
 	}
 }
 
