@@ -1,18 +1,6 @@
 <?php
     require_once("connect.php");
     
-    private $id;
-    private $nom;
-    private $descriptionCourte;
-    private $descriptionLongue;
-    private $idCategoriePrimaire;
-    private $idCategorieSecondaire;
-    private $nbSignalement;
-    private $dateLimite;
-    private $dateDepassee;
-    private $dateCreation;
-    private $idUtilisateur;
-    private $idGroupe;
 
 class propositionFactory {
 
