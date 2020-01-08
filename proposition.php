@@ -177,7 +177,9 @@ class proposition {
 
     function ajouter_dans_db(){
         global $co;
-        $result = mysqli_query($co, "INSERT INTO proposition(nompropo,descCourte,descLongue,catprinc,catsec,dateLimite,dateDepassee,nbSignalement,dateCreation,ID,idGroupe) VALUES('$this->nom','$this->descriptionCourte','$this->descriptionLongue', '$this->idCategoriePrimaire', '$this->idCategorieSecondaire', '$this->dateLimite', '$this->dateDepassee', '$this->nbSignalement', '$this->dateCreation', '$this->idUtilisateur', '$this->idGroupe')") or die ("Exécution de la requête impossible".mysqli_error($co));
+            echo "INSERT INTO proposition(nompropo,descCourte,descLongue,catprinc,catsec,dateLimite,dateDepassee,nbSignalement,dateCreation,ID,idGroupe) VALUES('$this->nom','$this->descriptionCourte','$this->descriptionLongue', '$this->idCategoriePrimaire', '$this->idCategorieSecondaire', '$this->dateLimite', '$this->dateDepassee', '$this->nbSignalement', '$this->dateCreation', '$this->idUtilisateur', '$this->idGroupe')";
+                    $result = mysqli_query($co, "INSERT INTO proposition(nompropo,descCourte,descLongue,catprinc,catsec,dateLimite,dateDepassee,nbSignalement,dateCreation,ID,idGroupe) VALUES('$this->nom','$this->descriptionCourte','$this->descriptionLongue', '$this->idCategoriePrimaire', '$this->idCategorieSecondaire', '$this->dateLimite', '$this->dateDepassee', '$this->nbSignalement', '$this->dateCreation', '$this->idUtilisateur', '$this->idGroupe')") or die ("Exécution de la requête impossible".mysqli_error($co));
+
         $id = $mysqli->insert_id;
     }
 
