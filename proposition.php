@@ -16,7 +16,7 @@ class proposition {
     private $idUtilisateur;
     private $idGroupe;
 
-	function __construct($id, $nom, $descriptionCourte, $descriptionLongue, $idCategoriePrimaire, $idCategorieSecondaire, $nbSignalement, $dateLimite, $dateDepassee, $dateCreation, $idUtilisateur) {
+	function __construct($id, $nom, $descriptionCourte, $descriptionLongue, $idCategoriePrimaire, $idCategorieSecondaire, $nbSignalement, $dateLimite, $dateDepassee, $dateCreation, $idUtilisateur, $idGroupe) {
 		$this->id = $id;
 		$this->nom = $nom;
 		$this->descriptionCourte = $descriptionCourte;
