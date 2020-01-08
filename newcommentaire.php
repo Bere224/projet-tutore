@@ -18,7 +18,10 @@ echo 'test2';*/
 
 $commentaire = commentaireFactory::creer($texteCommmentaire,$idUtilisateur,$idProposition);
 
-$commentaire->ajouter_dans_db();
+if($commentaire != false)
+{
+	$commentaire->ajouter_dans_db();
+}
 
 header('Location: accueil.php');
 

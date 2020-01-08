@@ -21,8 +21,11 @@ if($_POST['datechoix'] = 'sans')
 
 $propo = propositionFactory::creer($nompropo,$desccourte,$desclongue,$catprinc,$catsec,$datedecloture,$idConnecte,$idGroupe);
 
+if($propo != false)
+{
+	$propo->ajouter_dans_db();
+}
 
-$propo->ajouter_dans_db();
 
 
 header('Location: accueil.php');

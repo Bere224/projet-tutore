@@ -12,7 +12,11 @@ $idGroupe = $_POST["idGroupe"];
 
 $cat = categorieFactory::creer($nom,$idGroupe);
 
-$cat->ajouter_dans_db();
+if($cat != false)
+{
+	$cat->ajouter_dans_db();
+}
+
 
 header('Location: accueil.php');
 
