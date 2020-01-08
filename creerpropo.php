@@ -10,7 +10,7 @@
 			<h2> Créer une nouvelle proposition </h2>
 			<form method="post" action="newpropo.php?idGroupe=<?php echo $_GET['idGroupe'] ?>" > 
 				<label> nom de la proposition </label>
-				<input  type="text" id="nompropo" name="nompropo" </input> 
+				<input  type="text" id="nompropo" name="nompropo"> 
 				<br/>
 				<br/>
 				<label> Description courte </label>
@@ -42,7 +42,7 @@
 				</select>
 				<br/>
 				<br/>
-				Sans <input type="radio" name="datecloture" checked value="sans" >
+				Sans <input type="radio" name="dateSans" checked value="sans" >
 				Avec <input type="radio" name="datecloture" value="avec" >
 				<label> date de cloture </label>
 				<br/>
