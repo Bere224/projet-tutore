@@ -125,7 +125,11 @@ td {
 font-family: sans-serif;
 border: thin solid #6495ed;
 width: 50%;
-padding: 5px;
+padding-right: auto;
+padding-left: auto;
+padding-top: auto;
+padding-bottom: auto;
+
 text-align: center;
 background-color: #ffffff;
 }

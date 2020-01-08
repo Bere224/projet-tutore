@@ -1,6 +1,8 @@
 <?php
 require_once("connect.php");
 
+require_once("ListeUtilisateur.php");
+require_once("ListeUtilisateurFactory.php");
 require_once("utilisateur.php");
 require_once("utilisateurFactory.php");
 require_once("listeGroupeFactory.php");
@@ -39,7 +41,7 @@ if($idConnecte==-1){
 
 <h1>  <?php echo "$Nomgrp" ?> </h1>;
 
-	
+
 
 		<h2> listes des propositions : </h2>
         <form method="post" action="voirpropo.php" > 
@@ -50,7 +52,8 @@ if($idConnecte==-1){
                 <tr>
                     <th>id</th>
                     <th>libelle</th>
-					<th>description courte</th
+					<th>description courte</th>
+					<th>catégorie</th>
                 </tr>
                 <?php  //On affiche les lignes du tableau une à une à l'aide d'une boucle
                 foreach ($listepropo->getProposition() as $proposition)
@@ -58,8 +61,9 @@ if($idConnecte==-1){
                 ?>
                 <tr>
                     <td><?php echo $proposition->getId() ?></td>
-                    <td><button type="SUBMIT" name="iddugroupe" value="<?php echo $proposition->getId() ?>"> <?php echo $proposition->getNom() ?></button> </td>
+                    <td> <button type="SUBMIT" name="idpropo" value="<?php echo $proposition->getId() ?>"> <?php echo $proposition->getNom() ?></button> </td>
                     <td> <?php echo $proposition->getDescriptionCourte() ?> </td>
+					<td> <?php echo $proposition->getIdCategoriePrimaire() ?> </td>
                 </tr>
                 <?php } ?>
             </table>
@@ -67,23 +71,23 @@ if($idConnecte==-1){
 		
 		
 		
-		<h2> groupes possédés: </h2>
+		<h2> membres du groupe </h2>
         <form method="post" action="groupeadmin.php" > 
             <?php
-            $listecommentaires = listeGroupeFactory::listeGroupesPossedeParUtilisateur($idConnecte);
+            $listemembre = listeUtilisateurFactory::listeUtilisateurPourGroupe($id);
             ?>
             <table>
                 <tr>
-                    <th>id</th>
-                    <th>libelle</th>
+                    <th>nom</th>
+                    <th>prenom</th>
                 </tr>
                 <?php  //On affiche les lignes du tableau une à une à l'aide d'une boucle
-                foreach ($listeGroupe->getGroupes() as $groupe)
+                foreach ($listemembre->getUtilisateur() as $utilisateur)
                 {
                 ?>
                 <tr>
-                    <td><?php echo $groupe->getId() ?></td>
-                    <td><button type="SUBMIT" name="iddugroupe" value="<?php echo $groupe->getId() ?>"> <?php echo $groupe->getNom() ?></button> </td>
+                    <td><?php echo $utilisateur->getNom() ?></td>
+                    <td><?php echo $utilisateur->getPrenom() ?> </td>
                    
                 </tr>
                 <?php } ?>
