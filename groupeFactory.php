@@ -4,9 +4,9 @@ require_once("connect.php");
 
 class groupeFactory {
 
-    public static function creerGroupe($nom,$dateCreation,$idUtilisateur)
+    public static function creerGroupe($nom,$idUtilisateur)
     {
-        return new groupe(0,$nom,$dateCreation,0,$idUtilisateur);
+        return new groupe(0,$nom,date('Y-m-d'),0,$idUtilisateur);
     }
 
     public static function charger($id)
