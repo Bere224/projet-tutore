@@ -148,7 +148,7 @@ class proposition {
     {
         $this->dateCreation = $dateCreation;
 
-        return $this;liste
+        return $this;
     }
 
     public function getIdUtilisateur()
