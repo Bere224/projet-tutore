@@ -10,10 +10,9 @@ $desclongue = $_POST['desclongue'];
 $catprinc = $_POST['catprinc'];
 $catsec = $_POST['catsec'];
 $datedecloture = $_POST['datedecloture'];
-$idGroupe = $_GET['idGroupe'];
+$idGroupe = $_POST['idGroupe'];
 
 
-$idGroupe = $_GET['idGroupe'];
 
 if($_POST['datechoix'] = 'sans')
 {
