@@ -42,8 +42,8 @@
 				</select>
 				<br/>
 				<br/>
-				Sans <input type="radio" name="dateSans" checked value="sans" >
-				Avec <input type="radio" name="datecloture" value="avec" >
+				Sans <input type="radio" name="datechoix" checked value="sans" >
+				Avec <input type="radio" name="datechoix" value="avec" >
 				<label> date de cloture </label>
 				<br/>
 				<br/>
