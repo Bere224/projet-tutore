@@ -1,6 +1,8 @@
 <?php
 require_once("connect.php");
 
+require_once("utilisateur.php");
+require_once("utilisateurFactory.php");
 
 if($idConnecte==-1){
     header("Location:home.php");
@@ -24,9 +26,18 @@ if($idConnecte==-1){
         require_once("email.php");
         require_once("emailFactory.php");
 
-        echo 'test';
+        
         ?>
+		
+		<?php $utilisateur= utilisateurFactory::charger($idConnecte); 
+$Nom= $utilisateur->getNom(); 
+$prenom= $utilisateur->getPrenom(); 
 
+
+?>
+<h1>  Bienvenue <?php echo "$Nom $prenom" ?> </h1>;
+
+		
         <form method="post" action="groupe.php" > 
             <?php
             $listeGroupe = listeGroupeFactory::listeGroupesPourUtilisateur($idConnecte);
