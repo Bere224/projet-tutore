@@ -134,6 +134,18 @@ class utilisateur {
     }
 
 
+    static function id_vers_nom($idUtilisateur){
+        global $co;
+        $reponse = mysqli_query($co, "SELECT nom FROM utilisateur where ID='$idUtilisateur'") or die ("Exécution de la requête impossible".mysqli_error($co));
+        while($donnees = mysqli_fetch_array($reponse))
+        {
+            return $donnees['nom'];
+        }
+
+        return 'Anonyme';
+    }
+
+
     function ajouter_dans_db(){
 		global $co;
         $result = mysqli_query($co, "INSERT INTO utilisateur(Login,mail,mdp,nom,prenom,valide,dateInscription,nbSignalement) VALUES('$this->login','$this->mail','$this->mdp', '$this->nom', '$this->prenom', '$this->valide', '$this->dateArrivee', '$this->nbSignalement')") or die ("Exécution de la requête impossible".mysqli_error($co));

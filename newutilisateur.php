@@ -31,9 +31,9 @@ if($utilisateuuur == false)
 $utilisateuuur->ajouter_dans_db();
 
 
-if(isset(POST['autoGroupe']) && !empty(_POST['autoGroupe']))
+if(isset($_POST['autoGroupe']) && !empty($_POST['autoGroupe']))
 {
-	$groupeId = POST['autoGroupe'];
+	$groupeId = $_POST['autoGroupe'];
 	$legroupe = groupeFactory::charger($groupeId);
 	$legroupe->ajouter_utilisateur($utilisateuuur);
 }

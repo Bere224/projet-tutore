@@ -4,13 +4,13 @@ require_once("connect.php");
 require_once("utilisateurFactory.php");
 require_once("groupeFactory.php");
 
-$idUtilisateur = $_POST["idUtilisateur"];
-$idGroupe = $_POST["idGroupe"];
+$idUtilisateur = $_GET["idUtilisateur"];
+$idGroupe = $_GET["idGroupe"];
 
-$utilisateur = utilisateurFactory::get($idUtilisateur);
-$groupe = groupeFactory::get($idGroupe);
+$utilisateur = utilisateurFactory::charger($idUtilisateur);
+$groupe = groupeFactory::charger($idGroupe);
 
-$groupe->retirer_utilisateur($utilisateur);
+$groupe->supprimer_utilisateur($utilisateur);
 
 header("Location:accueil.php");
 

@@ -1,5 +1,7 @@
 <?php
 require_once("connect.php");
+require_once("categorie.php");
+require_once("listeCategorie.php");
 
 class listeCategorieFactory {
 
@@ -14,7 +16,7 @@ class listeCategorieFactory {
 			$categories[] = new categorie($donnees['IDCategorie'],$donnees['nom'],$donnees['IDGroupe']) or die ("Exécution de la requête impossible".mysqli_error($co));
 	    }
 
-		return new listeCategories($categories);
+		return new listeCategorie($categories);
     }
 
     public static function listeCategoriesPourGroupe($id) {
@@ -28,7 +30,7 @@ class listeCategorieFactory {
 			$categories[] = new categorie($donnees['IDCategorie'],$donnees['nom'],$donnees['IDGroupe']) or die ("Exécution de la requête impossible".mysqli_error($co));
 	    }
 
-		return new listeCategories($categories);
+		return new listeCategorie($categories);
     }
 
 }

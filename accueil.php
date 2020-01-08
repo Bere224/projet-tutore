@@ -37,53 +37,49 @@ $prenom= $utilisateur->getPrenom();
 ?>
 <h1>  Bienvenue <?php echo "$Nom $prenom" ?> </h1>
 
-		<h2> vos groupes : </h2>
-        <form method="post" action="voirgroupe.php" > 
-            <?php
-            $listeGroupe = listeGroupeFactory::listeGroupesPourUtilisateur($idConnecte);
+		<h2> Vos groupes : </h2>
+        <?php
+        $listeGroupe = listeGroupeFactory::listeGroupesPourUtilisateur($idConnecte);
+        ?>
+        <table>
+            <tr>
+                <th>id</th>
+                <th>libelle</th>
+            </tr>
+            <?php  //On affiche les lignes du tableau une à une à l'aide d'une boucle
+            foreach ($listeGroupe->getGroupes() as $groupe)
+            {
             ?>
-            <table>
-                <tr>
-                    <th>id</th>
-                    <th>libelle</th>
-                </tr>
-                <?php  //On affiche les lignes du tableau une à une à l'aide d'une boucle
-                foreach ($listeGroupe->getGroupes() as $groupe)
-                {
-                ?>
-                <tr>
-                    <td><?php echo $groupe->getId() ?></td>
-                    <td><button type="SUBMIT" name="iddugroupe" value="<?php echo $groupe->getId() ?>"> <?php echo $groupe->getNom() ?></button> </td>
-                   
-                </tr>
-                <?php } ?>
-            </table>
-        </form>
+            <tr>
+                <td><?php echo $groupe->getId() ?></td>
+                <td><a href="voirgroupe.php?iddugroupe=<?php echo $groupe->getId() ?>"> <button> <?php echo $groupe->getNom() ?></button> </a> </td>
+               
+            </tr>
+            <?php } ?>
+        </table>
 		
 		
 		
-		<h2> groupes possédés: </h2>
-        <form method="post" action="voirgroupeadmin.php" > 
-            <?php
-            $listeGroupe = listeGroupeFactory::listeGroupesPossedeParUtilisateur($idConnecte);
+		<h2> Groupes possédés: </h2>
+        <?php
+        $listeGroupe = listeGroupeFactory::listeGroupesPossedeParUtilisateur($idConnecte);
+        ?>
+        <table>
+            <tr>
+                <th>id</th>
+                <th>libelle</th>
+            </tr>
+            <?php  //On affiche les lignes du tableau une à une à l'aide d'une boucle
+            foreach ($listeGroupe->getGroupes() as $groupe)
+            {
             ?>
-            <table>
-                <tr>
-                    <th>id</th>
-                    <th>libelle</th>
-                </tr>
-                <?php  //On affiche les lignes du tableau une à une à l'aide d'une boucle
-                foreach ($listeGroupe->getGroupes() as $groupe)
-                {
-                ?>
-                <tr>
-                    <td><?php echo $groupe->getId() ?></td>
-                    <td><button type="SUBMIT" name="iddugroupe" value="<?php echo $groupe->getId() ?>"> <?php echo $groupe->getNom() ?></button> </td>
-                   
-                </tr>
-                <?php } ?>
-            </table>
-        </form>
+            <tr>
+                <td><?php echo $groupe->getId() ?></td>
+                <td><a href="voirgroupeadmin.php?iddugroupe=<?php echo $groupe->getId() ?>"> <button> <?php echo $groupe->getNom() ?></button> </a> </td>
+               
+            </tr>
+            <?php } ?>
+        </table>
 		
 		
 		

@@ -10,5 +10,5 @@ $id=$_GET['idpropo'];
 $propo=propositionFactory::charger($id); 
 $propo->supprimer_dans_db();
 		
-header("Location:voirgroupeadmin.php");
+header("Location:accueil.php");
 ?>

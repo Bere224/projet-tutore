@@ -12,10 +12,9 @@ class listeVote {
 		$this->nbrContre = 0;
 
 		foreach ($votes as $vote){
-			if($vote.estPour()) {
+			if($vote->estPour() == 1) {
 				$this->nbrPour++;
-			}
-			else {
+			} else {
 				$this->nbrContre++;
 			}
 		}
@@ -26,7 +25,7 @@ class listeVote {
 	}
 
 	function getNbrContre(){
-		return $this->nbrPour;
+		return $this->nbrContre;
 	}
 
 	function getVotes(){

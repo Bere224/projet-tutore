@@ -42,6 +42,18 @@ class categorie {
         $result = mysqli_query($co, "DELETE FROM categorie WHERE IDCategorie='$this->id')") or die ("Exécution de la requête impossible".mysqli_error($co));
     }
 
+
+    static function id_vers_nom($idCategorie,$idGroupe){
+        global $co;
+		$reponse = mysqli_query($co, "SELECT nom FROM categorie where IDGroupe='$idGroupe' AND IDCategorie='$idCategorie' ") or die ("Exécution de la requête impossible".mysqli_error($co));
+		while($donnees = mysqli_fetch_array($reponse))
+		{
+			return $donnees['nom'];
+	    }
+
+		return 'Aucun';
+    }
+
 }
 
 ?>

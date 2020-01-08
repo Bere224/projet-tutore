@@ -1,5 +1,8 @@
 <?php
 require_once("connect.php");
+
+
+require_once("listeCategorieFactory.php");
 ?>
 
 <!doctype html>
@@ -27,22 +30,31 @@ require_once("connect.php");
 				<br/>
 				<label> Catégorie principale </label>
 				<select name="catprinc" size="1">
-					<option>cat1
-					<option>cat2
-					<option>cat3
-					<option>cat4
-					<option>cat5
+			        <?php
+			        $listecat = listeCategorieFactory::listeCategoriesPourGroupe( $_GET['idGroupe'] );
+			        ?>
+		            <?php  //On affiche les lignes du tableau une à une à l'aide d'une boucle
+		            foreach ($listecat->getCategories() as $categorie)
+		            {
+		            ?>
+						<option value="<?php echo $categorie->getId() ?>"><?php echo $categorie->getNom() ?>
+		            <?php  //On affiche les lignes du tableau une à une à l'aide d'une boucle
+					}
+		            ?>
 				</select>
 				<br/>
 				<br/>
 				<label> Catégorie secondaire (optionel) </label> 
 				<select name="catsec" size="1">
-					<option>aucune
-					<option>cat1
-					<option>cat2
-					<option>cat3
-					<option>cat4
-					<option>cat5
+					<option value="-1">aucune
+		            <?php  //On affiche les lignes du tableau une à une à l'aide d'une boucle
+		            foreach ($listecat->getCategories() as $categorie)
+		            {
+		            ?>
+						<option value="<?php echo $categorie->getId() ?>"><?php echo $categorie->getNom() ?>
+		            <?php  //On affiche les lignes du tableau une à une à l'aide d'une boucle
+					}
+		            ?>
 				</select>
 				<br/>
 				<br/>

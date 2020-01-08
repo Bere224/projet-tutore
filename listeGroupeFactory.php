@@ -40,7 +40,7 @@ class listeGroupeFactory {
 		
 		$groupes = array();
 		
-		$reponse = mysqli_query($co, "SELECT * FROM groupe NATURAL JOIN est_dans WHERE est_dans.ID='$id'") or die ("Exécution de la requête impossible".mysqli_error($co));
+		$reponse = mysqli_query($co, "SELECT * FROM groupe, est_dans WHERE est_dans.IDGroupe = groupe.IDGroupe AND est_dans.ID='$id'") or die ("Exécution de la requête impossible".mysqli_error($co));
 		while($donnees = mysqli_fetch_array($reponse))
 		{
 			$groupes[] = new groupe($donnees['IDGroupe'],$donnees['libelle'],$donnees['dateCreation'],$donnees['nbSignalement'],$donnees['ID']);

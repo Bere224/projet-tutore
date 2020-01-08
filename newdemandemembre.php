@@ -8,23 +8,22 @@ require_once("groupeFactory.php");
 $email = $_POST["email"];
 $idGroupe = $_POST["idGroupe"];
 
-$utilisateur = utilisateurFactory::get($email);
-$groupe = groupeFactory::get($idGroupe);
+$utilisateur = utilisateurFactory::charger($email);
+$groupe = groupeFactory::charger($idGroupe);
 
 
 if($utilisateur == false)
 {
 	$mail = emailFactory::emailInvitationInscriptionGroupe($email,$groupe);
-	$mail->envoi();	
+	$mail->envoyer();	
 }
 else
 {
 	$mail = emailFactory::emailInvitationGroupe($utilisateur,$groupe);
-	$mail->envoi();	
+	$mail->envoyer();	
 }
 
-header("Location:accueil.php");
-
+header("Refresh:3; url=accueil.php");
 
 
 ?>

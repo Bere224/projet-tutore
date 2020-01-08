@@ -6,11 +6,11 @@ require_once("connect.php");
 class commentaireFactory {
 
 
-	public function creer($texteCommmentaire, $idUtilisateur, $idProposition){
-		return new commentaire(0 ,$texteCommmentaire, $idUtilisateur, $idProposition, date('Y-m-d'));
+	public static function creer($texteCommmentaire, $idUtilisateur, $idProposition){
+		return new commentaire(0 ,$texteCommmentaire, $idUtilisateur, $idProposition, date('Y-m-d'), 0);
 	}
 
-	public function charger($id){
+	public static function charger($id){
 		global $co;
 		
 		$result = false;
@@ -18,7 +18,7 @@ class commentaireFactory {
 		$reponse = mysqli_query($co, "SELECT * FROM commentaire WHERE IDCommentaire='$id'") or die ("Exécution de la requête impossible".mysqli_error($co));
 		while($donnees = mysqli_fetch_array($reponse))
 		{
-			$result = new commentaire($donnees['IDCommentaire'],$donnees['contenu'],$donnees['ID'],$donnees['IDPropo'],$donnees['dateCreation']);
+			$result = new commentaire($donnees['IDCommentaire'],$donnees['contenu'],$donnees['ID'],$donnees['IDPropo'],$donnees['dateCreation'],$donnees['nbSignalement']);
 	    }
 
 		return $result;

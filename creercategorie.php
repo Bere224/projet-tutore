@@ -11,6 +11,7 @@
             <form method="post" action="newcategorie.php" > 
                 <label> Nom de la catégorie :  </label>
                 <input  type="text" id="nom" name="nom" > 
+                <input  type="hidden" name="idGroupe" value=<?php echo $_GET['idGroupe']; ?>> 
                 <br/>
                 <br/>
                

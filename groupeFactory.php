@@ -1,7 +1,7 @@
 <?php
 
 require_once("connect.php");
-
+require_once("groupe.php");
 class groupeFactory {
 
     public static function creerGroupe($nom,$idUtilisateur)

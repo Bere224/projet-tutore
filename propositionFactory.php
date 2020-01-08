@@ -1,6 +1,7 @@
 <?php
     require_once("connect.php");
     
+    require_once("proposition.php");
 
 
 class propositionFactory {

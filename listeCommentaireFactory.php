@@ -13,10 +13,10 @@ class listeCommentaireFactory {
 		$reponse = mysqli_query($co, "SELECT * FROM commentaire") or die ("Exécution de la requête impossible".mysqli_error($co));
 		while($donnees = mysqli_fetch_array($reponse))
 		{
-			$commentaires[] = new commentaire($donnees['IDCommentaire'],$donnees['contenu'],$donnees['ID'],$donnees['IDPropo'],$donnees['dateCreation']);
+			$commentaires[] = new commentaire($donnees['IDCommentaire'],$donnees['contenu'],$donnees['ID'],$donnees['IDPropo'],$donnees['dateCreation'],$donnees['nbSignalement']);
 	    }
 
-		return new listeCommentaires($commentaires);
+		return new listeCommentaire($commentaires);
     }
 
     public static function listeCommentairePourUtilisateur($id) {
@@ -27,10 +27,10 @@ class listeCommentaireFactory {
 		$reponse = mysqli_query($co, "SELECT * FROM commentaire where ID='$id'") or die ("Exécution de la requête impossible".mysqli_error($co));
 		while($donnees = mysqli_fetch_array($reponse))
 		{
-			$commentaires[] = new commentaire($donnees['IDCommentaire'],$donnees['contenu'],$donnees['ID'],$donnees['IDPropo'],$donnees['dateCreation']);
+			$commentaires[] = new commentaire($donnees['IDCommentaire'],$donnees['contenu'],$donnees['ID'],$donnees['IDPropo'],$donnees['dateCreation'],$donnees['nbSignalement']);
 	    }
 
-		return new listeCommentaires($commentaires);
+		return new listeCommentaire($commentaires);
     }
 
     public static function listeCommentairePourProposition($id) {
@@ -41,12 +41,25 @@ class listeCommentaireFactory {
 		$reponse = mysqli_query($co, "SELECT * FROM commentaire where IDPropo='$id'") or die ("Exécution de la requête impossible".mysqli_error($co));
 		while($donnees = mysqli_fetch_array($reponse))
 		{
-			$commentaires[] = new commentaire($donnees['IDCommentaire'],$donnees['contenu'],$donnees['ID'],$donnees['IDPropo'],$donnees['dateCreation']);
+			$commentaires[] = new commentaire($donnees['IDCommentaire'],$donnees['contenu'],$donnees['ID'],$donnees['IDPropo'],$donnees['dateCreation'],$donnees['nbSignalement']);
 	    }
 
-		return new listeCommentaires($commentaires);
+		return new listeCommentaire($commentaires);
     }
 
+    public static function listeCommentaireSignalement() {
+		global $co;
+		
+		$commentaires = array();
+		
+		$reponse = mysqli_query($co, "SELECT * FROM commentaire where nbSignalement>0") or die ("Exécution de la requête impossible".mysqli_error($co));
+		while($donnees = mysqli_fetch_array($reponse))
+		{
+			$commentaires[] = new commentaire($donnees['IDCommentaire'],$donnees['contenu'],$donnees['ID'],$donnees['IDPropo'],$donnees['dateCreation'],$donnees['nbSignalement']);
+	    }
+
+		return new listeCommentaire($commentaires);
+    }
 }
 
 ?>

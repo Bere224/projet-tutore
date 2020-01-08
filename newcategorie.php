@@ -8,12 +8,12 @@ require_once("categorie.php");
 require_once("categorieFactory.php");
 
 $nom = $_POST["nom"];
-$description = $_POST["description"]
+$idGroupe = $_POST["idGroupe"];
 
-$cat = categorieFactory::creercategorie($nom,$description);
+$cat = categorieFactory::creer($nom,$idGroupe);
 
 $cat->ajouter_dans_db();
 
-header('Location : creercategorie.php');
+header('Location: accueil.php');
 
 ?>

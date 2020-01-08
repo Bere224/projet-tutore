@@ -7,22 +7,20 @@ require_once("connect.php");
 require_once("commentaire.php");
 require_once("commentaireFactory.php");
 
-$texteCommmentaire = $_POST["texteCommentaire"];
-$idUtilisateur = $_POST["idUtilisateur"];
-$idProposition = $_POST["idProposition"];
+$texteCommmentaire = $_POST["texte"];
+$idUtilisateur = $idConnecte;
+$idProposition = $_GET["idPropo"];
 
 
-echo 'test';
 /*$result = mysqli_query($co, 'INSERT INTO commentaire(dateCreation) VALUES(\'$nomgrp\',\'12/11/20\', 1)') or die ("Exécution de la requête impossible".mysqli_error($co));
 echo 'test2';*/
 
 
-$commentaire = commentaireFactory::charger($id);
+$commentaire = commentaireFactory::creer($texteCommmentaire,$idUtilisateur,$idProposition);
 
-$commentaire->setNbSignalement($commentaire->getNbSignalement()+1);
+$commentaire->ajouter_dans_db();
 
-$commentaire->modifier_dans_db();
-
+header('Location: accueil.php');
 
 
 ?>

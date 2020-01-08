@@ -8,9 +8,9 @@ class vote {
 	private $idProposition;
 
 	function __construct($pour, $idUtilisateur, $idProposition) {
-		$this->votes = $votes;
-		$this->nbrPour = 0;
-		$this->nbrContre = 0;
+		$this->pour = $pour;
+		$this->idUtilisateur = $idUtilisateur;
+		$this->idProposition = $idProposition;
 	}
 
 	function getId(){

@@ -5,11 +5,11 @@ require_once("connect.php");
 
 class categorieFactory {
 
-	function static charger($nom, $idGroupe){
+	static function creer($nom, $idGroupe){
 		return new categorie(0, $nom, $idGroupe);
 	}
 
-	function static charger($id){
+	static function charger($id){
 		global $co;
 		
 		$result = false;
