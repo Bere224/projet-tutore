@@ -16,7 +16,7 @@ $group = groupeFactory::creergroupe($nomgrp,$idConnecte);
 $group->ajouter_dans_db();
 
 
-header('Location: creergroupe.php');
+header('Location: creerpropo.php');
 
 
 
