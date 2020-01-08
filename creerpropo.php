@@ -13,7 +13,7 @@ require_once("connect.php");
 		<div id="container" >
 			<h2> Créer une nouvelle proposition </h2>
 			<form method="post" action="newpropo.php"> 
-				<input type="hidden" name="idGroupe" value="<?php $_GET['idPropo'] ?>">
+				<input type="hidden" name="idGroupe" value="<?php echo $_GET['idGroupe'] ?>">
 				<input type="text" name="nompropo">
 				<br/>
 				<br/>
