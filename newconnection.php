@@ -11,7 +11,9 @@ $mdp = $_POST["password"];
 $connect = utilisateurFactory::connexion($login,$mdp);
 if($connect == false)
 {
-	header("Location:connexion.php");
+	echo "Mauvais !";
+	die("Impossible de vous connecter");
+	header("Refresh:3; url=connexion.php");
 }
 
 else 

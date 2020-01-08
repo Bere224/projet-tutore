@@ -39,11 +39,11 @@ if($idConnecte==-1){
 		$Nomgrp= $grp->getNom();
 	?>
 
-<h1>  <?php echo "$Nomgrp" ?> </h1>;
+<h1>  <?php echo "$Nomgrp" ?> </h1>
 
 
 
-		<h2> listes des propositions : </h2>
+		<h2> Listes des propositions : </h2>
         <form method="post" action="voirpropo.php" > 
             <?php
             $listepropo = listePropositionFactory::listePropositionPourGroupe($id);
@@ -75,7 +75,7 @@ if($idConnecte==-1){
 		
 		
 		
-		<h2> membres du groupe </h2>
+		<h2> Membres du groupe </h2>
         <form method="post" action="groupeadmin.php" > 
             <?php
             $listemembre = listeUtilisateurFactory::listeUtilisateurPourGroupe($id);

@@ -60,6 +60,21 @@ class utilisateurFactory {
         return $result;
     }
 
+    public static function chercher($email)
+    {
+        global $co;
+        
+        $result = false;
+        
+        $reponse = mysqli_query($co, "SELECT * FROM utilisateur WHERE mail='$id'") or die ("Exécution de la requête impossible".mysqli_error($co));
+        while($donnees = mysqli_fetch_array($reponse))
+        {
+            $result = new utilisateur($donnees['ID'],$donnees['Login'],$donnees['nom'],$donnees['prenom'],$donnees['mail'],$donnees['mdp'],$donnees['dateInscription'],$donnees['valide'],$donnees['nbSignalement']);
+        }
+
+        return $result;
+    }
+
 
 }
 
