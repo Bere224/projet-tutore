@@ -33,11 +33,14 @@ class utilisateurFactory {
             return false;
         }
 
+
         $utilisateur = utilisateurFactory::charger($id);
 
         if(!$utilisateur->getValide()) {
             return false;
         }
+
+        $_SESSION['idUtilisateur'] = $id;
 
         return utilisateur;
     }
