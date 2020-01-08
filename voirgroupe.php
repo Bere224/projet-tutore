@@ -29,8 +29,9 @@ if($idConnecte==-1){
         $grp=groupeFactory::charger($id); 
         $Nomgrp= $grp->getNom();
     ?>
-
-    <h1>  <?php echo "$Nomgrp" ?> </h1>
+				
+				<div id="container">
+     <h1>  <?php echo "$Nomgrp" ?> </h1>
 
 
     
@@ -61,10 +62,10 @@ if($idConnecte==-1){
             </tr>
             <?php } ?>
         </table>
-
+		</div>		
         
         
-        
+        <div id="membre">
         <h2> Membres du groupe </h2>
             <?php
             $listemembre = listeUtilisateurFactory::listeUtilisateurPourGroupe($id);
@@ -86,7 +87,8 @@ if($idConnecte==-1){
                 </tr>
                 <?php } ?>
             </table>
-        
+        				</div>
+<div id="container">
         <h2> Listes des catégories : </h2>
         <?php
         $listecat = listeCategorieFactory::listeCategoriesPourGroupe($id);
@@ -108,8 +110,8 @@ if($idConnecte==-1){
             </tr>
             <?php } ?>
         </table>
-
-
+</div>
+ 
     </body>
 
 </html>
