@@ -1,6 +1,7 @@
 <?php
 require_once("connect.php");
 
+
 if($idConnecte==-1){
     header("Location:/projet/home.php");
 }
