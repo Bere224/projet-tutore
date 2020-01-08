@@ -2,6 +2,7 @@
 
 require_once("connect.php");
 
+require_once("utilisateur.php");
 
 class groupe {
 	private $id;
@@ -96,6 +97,16 @@ class groupe {
     function supprimer_dans_db(){
         global $co;
         $result = mysqli_query($co, "DELETE FROM groupe WHERE IDGroupe='$this->id')") or die ("Exécution de la requête impossible".mysqli_error($co));
+    }
+
+    static function ajouter_utilisateur($utilisateur){
+        global $co;
+        $result = mysqli_query($co, "INSERT INTO est_dans(IDGroupe,ID) VALUES('$this->IDGroupe','$utilisateur->getId()')") or die ("Exécution de la requête impossible".mysqli_error($co));
+    }
+
+    static function supprimer_utilisateur($utilisateur){
+        global $co;
+        $result = mysqli_query($co, "DELETE FROM est_dans WHERE IDGroupe='$this->id' AND ID='$utilisateur->getId()')") or die ("Exécution de la requête impossible".mysqli_error($co));
     }
 
 }
