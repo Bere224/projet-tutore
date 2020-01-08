@@ -3,7 +3,7 @@ require_once("connect.php");
 
 
 if($idConnecte==-1){
-    header("Location:/projet/projet-tutore/home.php");
+    header("Location:home.php");
 }
 ?>
 
