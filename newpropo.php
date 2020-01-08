@@ -25,5 +25,5 @@ $propo = propositionFactory::creer($nompropo,$desccourte,$desclongue,$catprinc,$
 $propo->ajouter_dans_db();
 
 
-header('Location: creerpropo.php');
+header('Location: accueil.php');
 ?>
