@@ -37,7 +37,7 @@ $prenom= $utilisateur->getPrenom();
 ?>
 <h1>  Bienvenue <?php echo "$Nom $prenom" ?> </h1>;
 
-		
+		<h2> vos groupes : </h2>
         <form method="post" action="groupe.php" > 
             <?php
             $listeGroupe = listeGroupeFactory::listeGroupesPourUtilisateur($idConnecte);
