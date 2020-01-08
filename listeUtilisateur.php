@@ -2,24 +2,24 @@
 require_once("utilisateur.php");
 
 class listeUtilisateur {
-	private $utilisateurs;
+	private $utilisateur;
 
-	function __construct($utilisateurs) {
-		$this->utilisateurs = $utilisateurs;
+	function __construct($utilisateur) {
+		$this->utilisateur = $utilisateur;
 	}
 
-	public function getNbrUtilisateurs(){
-		return count($this->utilisateurs);
+	public function getNbrUtilisateur(){
+		return count($this->utilisateur);
 	}
 
-	public function getUtilisateurs(){
-		return $this->utilisateurs;
+	public function getUtilisateur(){
+		return $this->utilisateur;
 	}
 
 	public function estDans($utilisateur){
-		foreach ($utilisateurs as $iter) {
+		foreach ($utilisateur as $iter) {
 			if($iter->getId() == $utilisateur->getId()) {
-				return true
+				return true;
 			}
 		}
 		return false;
