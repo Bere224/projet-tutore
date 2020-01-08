@@ -23,7 +23,7 @@ if($idConnecte==-1){
         require_once("listeGroupeFactory.php");
         require_once("listeGroupe.php");
 
-        require_once("listePropositonFactory.php");
+        require_once("listePropositionFactory.php");
         require_once("propositionFactory.php");
 		 require_once("proposition.php");
         require_once("listeCommentaireFactory.php");
