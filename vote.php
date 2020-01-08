@@ -30,15 +30,18 @@ class vote {
 	}
 
     function ajouter_dans_db(){
+        global $co;
         $result = mysqli_query($co, "INSERT INTO vote(IDPropo,ID,pour) VALUES('$this->idProposition','$this->idUtilisateur','$this->pour')") or die ("Exécution de la requête impossible".mysqli_error($co));
         $id = $mysqli->insert_id;
     }
 
     function modifier_dans_db(){
+        global $co;
         $result = mysqli_query($co, "UPDATE vote SET pour='$this->pour' WHERE IDPropo='$this->idProposition' AND ID='$this->idUtilisateur')") or die ("Exécution de la requête impossible".mysqli_error($co));
     }
 
 	function supprimer_dans_db(){
+        global $co;
         $result = mysqli_query($co, "DELETE FROM vote WHERE WHERE IDPropo='$this->idProposition' AND ID='$this->idUtilisateur'") or die ("Exécution de la requête impossible".mysqli_error($co));
     }
 

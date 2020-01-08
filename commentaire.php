@@ -38,15 +38,18 @@ class commentaire {
 	}
 
     function ajouter_dans_db(){
+        global $co;
         $result = mysqli_query($co, "INSERT INTO commentaire(contenu,dateCreation,nbSignalement,ID,IDPropo) VALUES('$texte','$this->dateCreation','$this->nbSignalement', '$this->idUtilisateur', '$this->idProposition')") or die ("Exécution de la requête impossible".mysqli_error($co));
         $id = $mysqli->insert_id;
     }
 
     function modifier_dans_db(){
+        global $co;
         $result = mysqli_query($co, "UPDATE commentaire SET contenu='$this->texte',dateCreation='$this->dateCreation',nbSignalement='$this->nbSignalement',ID='$this->idUtilisateur',IDPropo='$this->idProposition' WHERE IDCommentaire='$id')") or die ("Exécution de la requête impossible".mysqli_error($co));
     }
 	
 	function supprimer_dans_db(){
+        global $co;
         $result = mysqli_query($co, "DELETE FROM commentaire WHERE IDCommentaire='$this->id')") or die ("Exécution de la requête impossible".mysqli_error($co));
     }
 

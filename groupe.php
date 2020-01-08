@@ -83,15 +83,18 @@ class groupe {
 
 
 	function ajouter_dans_db(){
+        global $co;
 		$result = mysqli_query($co, "INSERT INTO groupe(libelle,dateCreation,ID,nbSignalement) VALUES('$this->nom','$this->dateCreation','$this->idUtilisateur', '$this->nbSignalement')") or die ("Exécution de la requête impossible".mysqli_error($co));
 		$id = $mysqli->insert_id;
 	}
 
     function modifier_dans_db(){
+        global $co;
         $result = mysqli_query($co, "UPDATE groupe SET libelle='$this->nom',dateCreation='$this->dateCreation',ID='$this->idUtilisateur',nbSignalement='$this->nbSignalement' WHERE IDGroupe='$this->id')") or die ("Exécution de la requête impossible".mysqli_error($co));
     }
 
     function supprimer_dans_db(){
+        global $co;
         $result = mysqli_query($co, "DELETE FROM groupe WHERE IDGroupe='$this->id')") or die ("Exécution de la requête impossible".mysqli_error($co));
     }
 

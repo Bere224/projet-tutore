@@ -176,15 +176,18 @@ class proposition {
     }
 
     function ajouter_dans_db(){
+        global $co;
         $result = mysqli_query($co, "INSERT INTO proposition(nompropo,descCourte,descLongue,catprinc,catsec,dateLimite,dateDepassee,nbSignalement,dateCreation,ID,idGroupe) VALUES('$this->nom','$this->descriptionCourte','$this->descriptionLongue', '$this->idCategoriePrimaire', '$this->idCategorieSecondaire', '$this->dateLimite', '$this->dateDepassee', '$this->nbSignalement', '$this->dateCreation', '$this->idUtilisateur', '$this->idGroupe')") or die ("Exécution de la requête impossible".mysqli_error($co));
         $id = $mysqli->insert_id;
     }
 
     function modifier_dans_db(){
+        global $co;
         $result = mysqli_query($co, "UPDATE proposition SET nompropo='$this->nom',descCourte='$this->descriptionCourte',descLongue='$this->descriptionLongue',catprinc='$this->idCategoriePrimaire',catsec='$this->idCategorieSecondaire',dateLimite='$this->dateLimite',dateDepassee='$this->dateDepassee',nbSignalement='$this->nbSignalement',dateCreation='$this->dateCreation',ID='$this->idUtilisateur',IDGroupe='$this->idGroupe' WHERE IDPropo='$this->id')") or die ("Exécution de la requête impossible".mysqli_error($co));
     }
 	
 	function supprimer_dans_db(){
+        global $co;
         $result = mysqli_query($co, "DELETE FROM proposition WHERE IDPropo='$this->id')") or die ("Exécution de la requête impossible".mysqli_error($co));
     }
 
