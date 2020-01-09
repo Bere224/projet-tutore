@@ -8,8 +8,9 @@
 
         <div class="overboite">
             <div class="boite">
-              <h1 >DOKEOS</h1>
-              <p>La démocratie participative 2.0 !</p>
+   <!--           <h1 >DOKEOS</h1> -->
+              <img src="/projet/projet-tutore/DOKEOS.png">
+              <div class="home_intro"><b>La démocratie participative 2.0 !</b></div>
               <div class="overboite_vertical">
                 <div class="home_boutton"><a href="inscription.php"><button class="bouttonarrondi">Inscription</button></a></div>
                 <div class="home_boutton"><a href="connexion.php" class="button"><button class="bouttonarrondi_alternatif">Se connecter</button></a></div>
