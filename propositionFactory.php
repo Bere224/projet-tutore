@@ -9,7 +9,11 @@ class propositionFactory {
     public static function creer($nom, $descriptionCourte, $descriptionLongue, $idCategoriePrimaire, $idCategorieSecondaire, $dateLimite, $idUtilisateur, $idGroupe) {
         $prop = new proposition(0,$nom ,$descriptionCourte, $descriptionLongue, $idCategoriePrimaire, $idCategorieSecondaire, 0, $dateLimite, 0, date('Y-m-d'),$idUtilisateur,$idGroupe);
 
-        //todo check conflit
+        $reponse = mysqli_query($co, "SELECT * FROM proposition WHERE nompropo=$nom AND IDGroupe=$idGroupe") or die ("Exécution de la requête impossible".mysqli_error($co));
+        while($donnees = mysqli_fetch_array($reponse))
+        {
+            return false;
+        }       
 
         return $prop;
     }

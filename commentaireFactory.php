@@ -7,6 +7,13 @@ class commentaireFactory {
 
 
 	public static function creer($texteCommmentaire, $idUtilisateur, $idProposition){
+
+        $reponse = mysqli_query($co, "SELECT * FROM commentaire WHERE contenu=$texteCommmentaire AND ID=$idUtilisateur AND IDPropo=$idProposition") or die ("Exécution de la requête impossible".mysqli_error($co));
+        while($donnees = mysqli_fetch_array($reponse))
+        {
+            return false;
+        }		
+
 		return new commentaire(0 ,$texteCommmentaire, $idUtilisateur, $idProposition, date('Y-m-d'), 0);
 	}
 

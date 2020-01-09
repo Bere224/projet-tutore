@@ -99,6 +99,18 @@ class groupe {
         $result = mysqli_query($co, "DELETE FROM groupe WHERE IDGroupe='$this->id')") or die ("Exécution de la requête impossible".mysqli_error($co));
     }
 
+    function possede_utilisateur($utilisateur){
+        global $co;
+        $idUtilisateur = $utilisateur->getId();
+        $reponse = mysqli_query($co, "SELECT * FROM est_dans WHERE idGroupe=$this->id AND ID=$idUtilisateur") or die ("Exécution de la requête impossible".mysqli_error($co));
+        while($donnees = mysqli_fetch_array($reponse))
+        {
+            return true;
+        }       
+
+        return false;
+    }
+
     function ajouter_utilisateur($utilisateur){
         global $co;
         $idUtilisateur = $utilisateur->getId();

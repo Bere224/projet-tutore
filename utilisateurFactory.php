@@ -10,6 +10,12 @@ class utilisateurFactory {
     public static function inscription($login, $nom, $prenom, $mail, $mdp, $dateArrivee)
     {
         $utilisateur = new utilisateur(0,$login,$nom,$prenom,$mail,$mdp,date('Y-m-d'),0,0);
+
+        $reponse = mysqli_query($co, "SELECT * FROM utilisateur WHERE login=$login") or die ("Exécution de la requête impossible".mysqli_error($co));
+        while($donnees = mysqli_fetch_array($reponse))
+        {
+            return false;
+        }
 		
 		return $utilisateur;
     }

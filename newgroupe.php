@@ -13,7 +13,11 @@ $result = mysqli_query($co, 'INSERT INTO groupe(libelle,dateCreation,ID) VALUES(
 echo 'test2';
 */
 $group = groupeFactory::creergroupe($nomgrp,$idConnecte);
-$group->ajouter_dans_db();
+
+if($group != false)
+{
+	$group->ajouter_dans_db();
+}
 
 
 header('Location: creerpropo.php');

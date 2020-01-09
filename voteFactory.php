@@ -15,8 +15,6 @@ class voteFactory {
 			return false;
 	    }
 
-	    echo 'pas de dupli';
-
 		return new vote($pour,$idUtilisateur,$idProposition);
 	}
 

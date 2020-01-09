@@ -16,11 +16,20 @@ if($utilisateur == false)
 {
 	$mail = emailFactory::emailInvitationInscriptionGroupe($email,$groupe);
 	$mail->envoyer();	
+	echo "Envoyé !";
 }
 else
 {
-	$mail = emailFactory::emailInvitationGroupe($utilisateur,$groupe);
-	$mail->envoyer();	
+	if(!$groupe->possede_utilisateur($utilisateur))
+	{
+		$mail = emailFactory::emailInvitationGroupe($utilisateur,$groupe);
+		$mail->envoyer();	
+		echo "Envoyé !";
+	}
+	else
+	{
+		echo "Déjà dans le groupe !";
+	}
 }
 
 header("Refresh:3; url=accueil.php");
