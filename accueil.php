@@ -82,6 +82,7 @@ $prenom= $utilisateur->getPrenom();
         </table>
 		
 		<a href="/projet/projet-tutore/deconnexion.php">Se déconnecter</a>
+		<a href="/projet/projet-tutore/creergroupe.php">Créer un groupe</a>
 		
 		
 		
