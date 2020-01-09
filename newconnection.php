@@ -5,8 +5,8 @@ require_once("connect.php");
 require_once("utilisateur.php");
 require_once("utilisateurFactory.php");
 
-$login = $_POST["username"];
-$mdp = $_POST["password"];
+$login = $co->real_escape_string($_POST["username"]);
+$mdp = $co->real_escape_string($_POST["password"]);
 
 $connect = utilisateurFactory::connexion($login,$mdp);
 if($connect == false)
