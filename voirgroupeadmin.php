@@ -39,7 +39,7 @@ if($idConnecte==-1){
 		$grp=groupeFactory::charger($id); 
 		$Nomgrp= $grp->getNom();
 	?>
-
+<div id="container">
     <h1>  <?php echo "$Nomgrp" ?> </h1>
 
 
@@ -73,11 +73,12 @@ if($idConnecte==-1){
         </tr>
         <?php } ?>
     </table>
-
+	</br>
+	</br>
     <a href="creerpropo.php?idGroupe=<?php echo $id ?>" class="button">Ajouter une proposition </a>        
+	</div>
 	
-	
-	
+	<div id="membre">
 	<h2> Membres du groupe </h2>
         <?php
         $listemembre = listeUtilisateurFactory::listeUtilisateurPourGroupe($id);
@@ -100,9 +101,10 @@ if($idConnecte==-1){
             </tr>
             <?php } ?>
         </table>
-	
-		<a href="ajoutermembre.php?idGroupe=<?php echo $id ?>" class="button">Ajouter un membre </a>		
-
+	</br>
+		<a href="ajoutermembre.php?idGroupe=<?php echo $id ?>" class="button">Ajouter un membre </a>	
+</div>		
+<div id="container">
         <h2> Listes des catégories : </h2>
         <?php
         $listecat = listeCategorieFactory::listeCategoriesPourGroupe($id);
@@ -124,9 +126,9 @@ if($idConnecte==-1){
             </tr>
             <?php } ?>
         </table>
-
+</br>
         <a href="creercategorie.php?idGroupe=<?php echo $id ?>" class="button">Ajouter categorie </a>        
-
+</div>
     </body>
 
 </html>

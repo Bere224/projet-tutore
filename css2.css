@@ -61,14 +61,14 @@ h1{
 background-color: #ffffff;
  width: 35%;
 }
-    .button {
+    .button  {
   background-color: #53af57;
     color: white;
     padding: 13px 0px;
     margin: -16px 0;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: auto;
     border-radius: 12px;
     display : inline-block;
     text-align: center;
@@ -171,4 +171,25 @@ background-color: #ffffff;
 #membre h2{
 background-color: #ffffff;
  width: 40%;
+}
+   container .button  {
+  background-color: #53af57;
+    color: white;
+    padding: 13px 0px;
+    margin: -16px 0;
+    border: none;
+    cursor: pointer;
+    
+    border-radius: 12px;
+    display : inline-block;
+    text-align: center;
+width:auto;
+	line-height:50px;
+
+}
+
+container .button:hover {
+    background-color: white;
+    color: #53af57;
+    border: 1px solid #53af57;
 }
