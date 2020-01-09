@@ -3,6 +3,7 @@
 require_once("connect.php");
 
 require_once("utilisateur.php");
+require_once("listePropositionFactory.php");
 
 class groupe {
 	private $id;
@@ -96,7 +97,17 @@ class groupe {
 
     function supprimer_dans_db(){
         global $co;
-        $result = mysqli_query($co, "DELETE FROM groupe WHERE IDGroupe='$this->id')") or die ("Exécution de la requête impossible".mysqli_error($co));
+
+        $listepropo = listePropositionFactory::listePropositionPourGroupe($this->id);
+
+        foreach ($listepropo as $propo) {
+            $propo->supprimer_dans_db();
+        }
+
+        $result = mysqli_query($co, "DELETE FROM est_dans WHERE IDGroupe='$this->id'") or die ("Exécution de la requête impossible".mysqli_error($co));
+
+
+        $result = mysqli_query($co, "DELETE FROM groupe WHERE IDGroupe='$this->id'") or die ("Exécution de la requête impossible".mysqli_error($co));
     }
 
     function possede_utilisateur($utilisateur){

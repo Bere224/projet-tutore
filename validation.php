@@ -13,4 +13,4 @@ $utilisateur->setValide(1);
 
 $utilisateur->modifier_dans_db();
 
-header("Refresh:0; url=connexion.php");
+header("Refresh:0; url=connexion.php?login=".$utilisateur->getLogin());

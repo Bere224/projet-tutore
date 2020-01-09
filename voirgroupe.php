@@ -149,7 +149,7 @@ if($idConnecte==-1){
                         </table>
                     </div>
 
-                    <div class="div_voirsignalements">
+                    <div class="div_voirsignalements_supprimer">
                         <a href="retirermembre.php?idGroupe=<?php echo $id ?>&idUtilisateur=<?php echo $idConnecte ?>" class="bouttonarrondi_signaler">Quitter le groupe</a>        
                     </div>
                 </div>

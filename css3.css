@@ -286,8 +286,13 @@ a{
     background-image: url("/projet/projet-tutore/back.png");
 }
 
-.div_voirsignalements{
+.div_voirsignalements_supprimer{
+	display: flex;
 	width: 80%;
+}
+
+.div_signal_supp_unite{
+	width: 50%;
 }
 
 .logo_upsud{
@@ -313,4 +318,26 @@ a{
     right: 20px;
     bottom: 20px;
 	line-height: 150%;
+	background-color: #ffffff77;
+	padding: 5px;
+}
+
+.DOKEOS_flex{
+	display: flex;
+	height: 200px;
+}
+
+
+.DOKEOS{
+	margin:  auto;
+	height: 100%;
+}
+
+.DOKEOS_ALT{
+	margin:  auto;
+}
+
+.DOKEOS_ALT_img{
+	height: 0;
+	width: 0;
 }

@@ -18,9 +18,9 @@ if($idConnecte==-1){
 <!doctype html>
 <html lang="fr">
     <?php   
-        $id=$_GET['idGroupe'];
-        $grp=groupeFactory::charger($id); 
-        $Nomgrp= $grp->getNom();
+    $id=$_GET['idGroupe'];
+    $grp=groupeFactory::charger($id); 
+    $Nomgrp= $grp->getNom();
     ?>
 
     <?php

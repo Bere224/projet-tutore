@@ -164,8 +164,9 @@ if($idConnecte==-1){
                         <a href="creercategorie.php?idGroupe=<?php echo $id ?>" class="bouttonarrondi">Ajouter categorie </a>        
                     </div>
 
-                    <div class="div_voirsignalements">
-                        <a href="voirsignalements.php?idGroupe=<?php echo $id ?>" class="bouttonarrondi_signaler">Voir signalements </a>        
+                    <div class="div_voirsignalements_supprimer">
+                        <div class="div_signal_supp_unite"><a href="voirsignalements.php?idGroupe=<?php echo $id ?>" class="bouttonarrondi_signaler">Voir signalements</a></div>        
+                        <div class="div_signal_supp_unite"><a href="retirergroupe.php?idGroupe=<?php echo $id ?>" class="bouttonarrondi_signaler" onclick="return confirm('Êtes vous sûr de vouloir supprimer le groupe ?')">Supprimer le groupe</a></div>        
                     </div>
                 </div>
             </div>
