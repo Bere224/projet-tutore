@@ -307,3 +307,10 @@ a{
 	margin-top: -20px;
 	margin-bottom: 30px;
 }
+
+.home_credits{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+	line-height: 150%;
+}
