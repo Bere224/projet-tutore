@@ -7,7 +7,7 @@ require_once("connect.php");
 require_once("categorie.php");
 require_once("categorieFactory.php");
 
-$nom = $_POST["nom"];
+$nom = $co->real_escape_string($_POST["nom"]);
 $idGroupe = $_POST["idGroupe"];
 
 $cat = categorieFactory::creer($nom,$idGroupe);

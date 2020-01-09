@@ -5,7 +5,7 @@ require_once("connect.php");
 require_once("utilisateurFactory.php");
 require_once("groupeFactory.php");
 
-$email = $_POST["email"];
+$email = $co->real_escape_string($_POST["email"]);
 $idGroupe = $_POST["idGroupe"];
 
 $utilisateur = utilisateurFactory::chercher($email);

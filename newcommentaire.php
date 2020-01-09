@@ -7,7 +7,7 @@ require_once("connect.php");
 require_once("commentaire.php");
 require_once("commentaireFactory.php");
 
-$texteCommmentaire = $_POST["texte"];
+$texteCommmentaire = $co->real_escape_string($_POST["texte"]);
 $idUtilisateur = $idConnecte;
 $idProposition = $_GET["idPropo"];
 

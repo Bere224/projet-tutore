@@ -5,7 +5,7 @@ require_once("connect.php");
 require_once("groupe.php");
 require_once("groupeFactory.php");
 
-$nomgrp = $_POST["nomgrp"];
+$nomgrp = $co->real_escape_string($_POST["nomgrp"]);
 
 /*
 echo 'test';

@@ -4,13 +4,13 @@ require_once("connect.php");
 require_once("proposition.php");
 require_once("propositionFactory.php");
 
-$nompropo = $_POST["nompropo"];
-$desccourte = $_POST['desccourte'];
-$desclongue = $_POST['desclongue'];
-$catprinc = $_POST['catprinc'];
-$catsec = $_POST['catsec'];
-$datedecloture = $_POST['datedecloture'];
-$idGroupe = $_POST['idGroupe'];
+$nompropo = $co->real_escape_string($_POST["nompropo"]);
+$desccourte = $co->real_escape_string($_POST['desccourte']);
+$desclongue = $co->real_escape_string($_POST['desclongue']);
+$catprinc = $co->real_escape_string($_POST['catprinc']);
+$catsec = $co->real_escape_string($_POST['catsec']);
+$datedecloture = $co->real_escape_string($_POST['datedecloture']);
+$idGroupe = $co->real_escape_string($_POST['idGroupe']);
 
 
 
