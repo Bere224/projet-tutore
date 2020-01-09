@@ -81,7 +81,7 @@ $prenom= $utilisateur->getPrenom();
             <?php } ?>
         </table>
 		
-		
+		<a href="/projet/projet-tutore/deconnexion.php">Se déconnecter</a>
 		
 		
 		

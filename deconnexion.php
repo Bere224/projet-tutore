@@ -1,5 +1,5 @@
 <?php
-requiere_once("connect.php");
+require_once("connect.php");
 
 $_SESSION['idUtilisateur'] = -1;
 
