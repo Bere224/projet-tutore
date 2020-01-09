@@ -29,7 +29,7 @@ if($idConnecte==-1){
                 $prenom= $utilisateur->getPrenom(); 
                 ?>
 
-                <h1>  Bienvenue <?php echo "$Nom $prenom" ?> </h1>
+                <h1>  <?php echo "Bienvenue $prenom $Nom" ?> </h1>
 
                 <div class="segmenttable">
 
