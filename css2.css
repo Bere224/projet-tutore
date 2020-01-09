@@ -8,8 +8,6 @@ background-size: 1950px 970px;
   
 }
 
-
-
 #container{
    
 	 position: relative;
@@ -43,10 +41,65 @@ form {
     background: #fff;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
+.form_comm {
+    width:16%;
+    padding: 14px;
+    border: 1px solid #f1f1f1;
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
 #container h1{
     width: 80%;
     margin: 0 auto;
     padding-bottom: 10px;
+}
+
+#container_propo{
+    width: 80%;
+    margin: 13px auto;
+    padding-bottom: 10px;
+    margin-left : 134px;
+    text-align: center;
+}
+
+
+#container_comm{
+    width: 80%;
+    margin: 39px auto;
+    padding-bottom: 10px;
+    margin-left : 134px;
+    text-align: center;
+}
+#container_tab_comm{
+    width: 182%;
+    margin: 17px auto;
+    padding-bottom: 10px;
+    margin-left : 134px;
+    text-align: center;
+}
+#container_descCourte{
+    border : 1px solid #6495ed;
+}
+#container_descCourte p{
+    text-align : center;
+    line-height : 2.2;
+}
+
+#container_vote p{
+    text-align : center;
+    line-height : 2.2;
+}
+#container_vote a{
+    text-align : center;
+    line-height : 2.2;
+}
+#container_cat p{
+    text-align : center;
+    line-height : 2.2;
+}
+#container_cat {
+    text-align : center;
+    line-height : 2.2;
 }
 
 h1{
@@ -145,6 +198,7 @@ padding-bottom: auto;
 text-align: center;
 background-color: #ffffff;
 }
+
 .truc-a-centrer {
   position: absolute; /* postulat de départ */
   top: 50%; left: 50%; /* à 50%/50% du parent référent */
@@ -172,6 +226,7 @@ background-color: #ffffff;
 background-color: #ffffff;
  width: 40%;
 }
+
    container .button  {
   background-color: #53af57;
     color: white;
@@ -193,3 +248,4 @@ container .button:hover {
     color: #53af57;
     border: 1px solid #53af57;
 }
+
