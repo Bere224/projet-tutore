@@ -18,6 +18,6 @@ if($vote == false)
 
 $vote->ajouter_dans_db();
 
-header('Location: accueil.php');
+header('Location: /projet/projet-tutore/voirpropo.php?idPropo='.$idProposition);
 
 ?>

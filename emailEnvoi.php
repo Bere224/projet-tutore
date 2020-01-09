@@ -37,7 +37,11 @@ class emailEnvoi {
 
 		return true;
 */
-		echo "Envoi d'un mail a $adresseMail    titre $titre    contenu $texte";
+		echo "<h1>Suite à un malfonction de PHPMailer sous WAMP, ce mail ne peut être envoyé :</h1>";
+
+		echo "TO : $adresseMail <br/>";
+		echo "TITRE : $titre <br/>";
+		echo "CONTENU : $texte <br/>";
 	}
 }
 

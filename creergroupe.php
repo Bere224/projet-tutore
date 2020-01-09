@@ -1,20 +1,20 @@
 <!doctype html>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <title>créer un groupe </title>
-        <link rel="stylesheet" type="text/css" href="css2.css" />
-    </head>
+    <?php
+    $retourPage="/projet/projet-tutore/accueil.php";
+    $titrePage="Créer un groupe";
+    require_once('head.php');
+    ?>
     <body>
-        <div id="container" >
-            <h2> Entrez le nom du groupe à créer </h2>
-            <form method="post" action="newgroupe.php" > 
-                <label> Nom du groupe :  </label>
-                <input  type="text" id="nomgrp" name="nomgrp"></input> 
-                <br/>
-                <br/>
-                <input class="button" type="submit" Value="créer">
-            </form>
+        <div class="overboite">
+            <div class="boite">
+                <h1> Entrez le nom du groupe à créer </h1>
+                <form method="post" action="newgroupe.php" > 
+                    <label class="labelinputtext"> Nom du groupe :  </label> <br/>
+                    <input  type="text" class="inputtext" name="nomgrp"></input>
+                    <input class="bouttonarrondi" type="submit" Value="Créer">
+                </form>
+            </div>
         </div>
     </body>
 </html>

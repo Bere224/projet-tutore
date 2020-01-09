@@ -7,8 +7,8 @@ require_once("groupeFactory.php");
 $idUtilisateur = $_GET["idUtilisateur"];
 $idGroupe = $_GET["idGroupe"];
 
-$utilisateur = utilisateurFactory::get($idUtilisateur);
-$groupe = groupeFactory::get($idGroupe);
+$utilisateur = utilisateurFactory::charger($idUtilisateur);
+$groupe = groupeFactory::charger($idGroupe);
 
 $groupe->ajouter_utilisateur($utilisateur);
 

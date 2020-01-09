@@ -175,29 +175,31 @@ class proposition {
         return $this;
     }
 
-    public function estVotable()
+    public function estVotable($idUtilisateur)
     {
-        if($this->dateLimite == "1999-01-01")
-        {
-            return true;
-        }
+        global $co;
 
-        if($this->dateLimite > date('Y-m-d'))
-        {
-            return true;
-        }
-        else
+
+        if($this->dateLimite != "1999-01-01" && $this->dateLimite < date('Y-m-d'))
         {
             return false;
         }
+
+        $reponse = mysqli_query($co, "SELECT * FROM vote WHERE ID='$idUtilisateur' AND IDPropo='$this->id'") or die ("Exécution de la requête impossible".mysqli_error($co));
+        while($donnees = mysqli_fetch_array($reponse))
+        {
+            return false;
+        }
+
+        return true;
     }
 
     function ajouter_dans_db(){
         global $co;
-            echo "INSERT INTO proposition(nompropo,descCourte,descLongue,catprinc,catsec,dateLimite,dateDepassee,nbSignalement,dateCreation,ID,idGroupe) VALUES('$this->nom','$this->descriptionCourte','$this->descriptionLongue', '$this->idCategoriePrimaire', '$this->idCategorieSecondaire', '$this->dateLimite', '$this->dateDepassee', '$this->nbSignalement', '$this->dateCreation', '$this->idUtilisateur', '$this->idGroupe')";
-                    $result = mysqli_query($co, "INSERT INTO proposition(nompropo,descCourte,descLongue,catprinc,catsec,dateLimite,dateDepassee,nbSignalement,dateCreation,ID,idGroupe) VALUES('$this->nom','$this->descriptionCourte','$this->descriptionLongue', '$this->idCategoriePrimaire', '$this->idCategorieSecondaire', '$this->dateLimite', '$this->dateDepassee', '$this->nbSignalement', '$this->dateCreation', '$this->idUtilisateur', '$this->idGroupe')") or die ("Exécution de la requête impossible".mysqli_error($co));
 
-        $id = $mysqli->insert_id;
+        $result = mysqli_query($co, "INSERT INTO proposition(nompropo,descCourte,descLongue,catprinc,catsec,dateLimite,dateDepassee,nbSignalement,dateCreation,ID,idGroupe) VALUES('$this->nom','$this->descriptionCourte','$this->descriptionLongue', '$this->idCategoriePrimaire', '$this->idCategorieSecondaire', '$this->dateLimite', '$this->dateDepassee', '$this->nbSignalement', '$this->dateCreation', '$this->idUtilisateur', '$this->idGroupe')") or die ("Exécution de la requête impossible".mysqli_error($co));
+
+        $id = $co->insert_id;
     }
 
     function modifier_dans_db(){

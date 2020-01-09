@@ -10,42 +10,45 @@ require_once("connect.php");
 
 <!doctype html>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <title>accueil </title>
-        <link rel="stylesheet" type="text/css" href="css2.css" />
-    </head>
-    <body>
-      <div id="container">
-        <form method = "post" action="newutilisateur.php">
-              <h1>Vos info</h1>
-                <div class= "formulaire_reservation_label-input">
-                  <label for="nom"><b>Nom : </b></label>
-                  <input type = "text" name="nom" class="formulaire_reservation_name" autocomplete = "on" autofocus required><br><br>
+  <?php
+  $titrePage="Rejoignez-nous";
+  require_once('head.php');
+  ?>
+  <body>
+    <div class="overboite">
+        <div class="boite">
+          <form method = "post" action="newutilisateur.php">
+              <h1>Rejoignez-nous !</h1>
+              <div class="form_espacement form_espacement_label_gauche">
+                <label for="nom" class="inputlabel">Nom </label>
+                <input type = "text" name="nom" class="inputtext" autocomplete = "on" placeholder="Nom" autofocus required>
 
-                  <label for="prenom"><b>Prénom :</b> </label>
-                  <input type = "text" name="prenom" class="formulaire_reservation_prenom" autocomplete = "on" required><br><br>
+                <label for="prenom">Prénom </label>
+                <input type = "text" name="prenom" class="inputtext" autocomplete = "on" placeholder="Prenom" required>
 
-                  <label for="email"><b>Email : </b></label>
-                  <input type = "email" name="email" class="formulaire_reservation_email" autocomplete = "on" required> <br><br>
+                <label for="email">Email </label>
+                <input type = "email" name="email" class="inputtext" autocomplete = "on" placeholder="Email" required>
 
-                  <label for="nom"><b>Login </b></label>
-                  <input type = "text" name="login" class="formulaire_reservation_name" autocomplete = "on" autofocus required><br><br>
+                <label for="nom">Login </label>
+                <input type = "text" name="login" class="inputtext" autocomplete = "on" placeholder="Login" autofocus required>
 
-                  <label for="password"><b>Choisissez un mot de passe : </b></label>
-                  <input type="password" name ="password" class= "formulaire_reservation_psw" required><br><br>
+                <div>
 
-                  <label for="conf_password"><b>Confirmer le mot de passe : </b></label>
-                  <input type="password" name ="conf_password" class= "formulaire_reservation_confirmation_psw" required><br><br>
+                <label for="password">Choisissez un mot de passe </label>
+                <input type="password" name ="password" class= "inputtext" placeholder="Mot de passe" required>
 
+                <label for="conf_password">Confirmer le mot de passe </label>
+                <input type="password" name ="conf_password" class= "inputtext" placeholder="Mot de passe" required>
 
-                  <input type = "hidden" name="autoGroupe" value="<?php if(isset($_GET['autoGroupe'])) {echo $_GET['autoGroupe'];} ?>">
-                  <input type="submit" id='submit' value='INSCRIPTION' >
-                              
+                </div>
+
+                <input type = "hidden" name="autoGroupe" value="<?php if(isset($_GET['autoGroupe'])) {echo $_GET['autoGroupe'];} ?>">
+                <input type="submit" id='submit' class="bouttonarrondi" value='valider' >
+              </div>
           </form>
-        </div>
-      </section>
-    </body>
+      </div>
+    </div>
+  </body>
 
 </html>
 

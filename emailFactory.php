@@ -15,7 +15,7 @@ class emailFactory {
     public static function emailInvitationInscriptionGroupe($email, $groupe) {
     	$idGrp=$groupe->getId();
     	$nomGrp=$groupe->getNom();
-    	return new email("Invitation dans un groupe sur Demos.com, Inscrivez-vous !", "Pour vous inscrire et etre ajoute dans le groupe $nomGrp, cliquez-<a href=\"http://localhost/projet/projet-tutore/Inscription.php?autoGroupe=$idGrp\">ici</a> >", $email); //todo faire mieux
+    	return new email("Invitation dans un groupe sur Demos.com, Inscrivez-vous !", "Pour vous inscrire et etre ajoute dans le groupe $nomGrp, cliquez-<a href=\"http://localhost/projet/projet-tutore/inscription.php?autoGroupe=$idGrp\">ici</a> >", $email); //todo faire mieux
     }
 
     public static function emailInvitationGroupe($utilisateur, $groupe) {

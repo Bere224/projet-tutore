@@ -12,6 +12,15 @@ $groupe = groupeFactory::charger($idGroupe);
 
 $groupe->supprimer_utilisateur($utilisateur);
 
-header("Location:accueil.php");
+
+if($idUtilisateur == $idConnecte)
+{
+	header("location: /projet/projet-tutore/accueil.php");
+}
+else
+{
+	header("location: /projet/projet-tutore/voirgroupeadmin.php?iddugroupe=".$_GET['idGroupe']);
+}
+
 
 ?>

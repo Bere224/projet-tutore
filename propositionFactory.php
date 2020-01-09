@@ -9,6 +9,9 @@ class propositionFactory {
     public static function creer($nom, $descriptionCourte, $descriptionLongue, $idCategoriePrimaire, $idCategorieSecondaire, $dateLimite, $idUtilisateur, $idGroupe) {
         global $co;
 
+        echo $descriptionCourte;
+        echo $descriptionLongue;
+
         $prop = new proposition(0,$nom ,$descriptionCourte, $descriptionLongue, $idCategoriePrimaire, $idCategorieSecondaire, 0, $dateLimite, 0, date('Y-m-d'),$idUtilisateur,$idGroupe);
 
         $reponse = mysqli_query($co, "SELECT * FROM proposition WHERE nompropo='$nom' AND IDGroupe='$idGroupe'") or die ("Exécution de la requête impossible".mysqli_error($co));

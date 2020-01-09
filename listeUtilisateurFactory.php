@@ -1,6 +1,6 @@
 <?php
-require_once("proposition.php");
-require_once("listeProposition.php");
+require_once("utilisateur.php");
+require_once("listeUtilisateur.php");
 require_once("connect.php");
 
 class listeUtilisateurFactory {

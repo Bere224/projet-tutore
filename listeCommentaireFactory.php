@@ -47,12 +47,12 @@ class listeCommentaireFactory {
 		return new listeCommentaire($commentaires);
     }
 
-    public static function listeCommentaireSignalement() {
+    public static function listeCommentaireSignalement($idGroupe) {
 		global $co;
 		
 		$commentaires = array();
 		
-		$reponse = mysqli_query($co, "SELECT * FROM commentaire where nbSignalement>0") or die ("Exécution de la requête impossible".mysqli_error($co));
+		$reponse = mysqli_query($co, "SELECT * FROM commentaire, proposition where commentaire.IDPropo = proposition.IDPropo AND commentaire.nbSignalement>0 and IDGroupe='$idGroupe'") or die ("Exécution de la requête impossible".mysqli_error($co));
 		while($donnees = mysqli_fetch_array($reponse))
 		{
 			$commentaires[] = new commentaire($donnees['IDCommentaire'],$donnees['contenu'],$donnees['ID'],$donnees['IDPropo'],$donnees['dateCreation'],$donnees['nbSignalement']);

@@ -1,25 +1,30 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8">
-    <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="css2.css" />
-  </head>
-  <body>
-    <div id="container_home">
-      <h1> Bienvenue sur Demos </h1>
+    <?php
+    require_once('head.php');
+    ?>
+    <body>
+        <div class="logo_upsud"><p></p></div>
+
+        <div class="overboite">
+            <div class="boite">
+              <h1 >DOKEOS</h1>
+              <p>La démocratie participative 2.0 !</p>
+              <div class="overboite_vertical">
+                <div class="home_boutton"><a href="inscription.php"><button class="bouttonarrondi">Inscription</button></a></div>
+                <div class="home_boutton"><a href="connexion.php" class="button"><button class="bouttonarrondi_alternatif">Se connecter</button></a></div>
+              </div>
+            </div>
+        </div>
+    </body>
+</html>
 
 
 
-      <br/>
-      <br/>
 
-      <a href="inscription.php" class="button">Inscription</a>
-    	<br/>
       <br/>
       <br/>
       <br/>
-      <a href="connexion.php" class="button">Se connecter</a>
     </div>
   </body>
 </html>

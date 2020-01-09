@@ -23,7 +23,7 @@ if($commentaire != false)
 	$commentaire->ajouter_dans_db();
 }
 
-header('Location: accueil.php');
+header('Location: http://localhost/projet/projet-tutore/voirpropo.php?idPropo='.$idProposition);
 
 
 ?>

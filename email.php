@@ -15,7 +15,6 @@ class email {
 	function envoyer(){
 		$envoi = new emailEnvoi();
 		$envoi->envoyer_email($this->adresseMail,$this->titre,$this->texte);
-		echo"$this->adresseMail,$this->titre,$this->texte";
 	}
 
 }

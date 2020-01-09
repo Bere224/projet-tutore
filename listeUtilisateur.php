@@ -1,5 +1,6 @@
 <?php
 require_once("utilisateur.php");
+require_once("utilisateurFactory.php");
 
 class listeUtilisateur {
 	private $utilisateur;
@@ -14,6 +15,10 @@ class listeUtilisateur {
 
 	public function getUtilisateur(){
 		return $this->utilisateur;
+	}
+
+	public function ajouterParId($id){
+		$this->utilisateur[] = utilisateurFactory::charger($id);
 	}
 
 	public function estDans($utilisateur){

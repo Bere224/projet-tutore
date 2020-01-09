@@ -74,7 +74,7 @@ class utilisateurFactory {
         
         $result = false;
         
-        $reponse = mysqli_query($co, "SELECT * FROM utilisateur WHERE mail='$id'") or die ("Exécution de la requête impossible".mysqli_error($co));
+        $reponse = mysqli_query($co, "SELECT * FROM utilisateur WHERE mail='$email'") or die ("Exécution de la requête impossible".mysqli_error($co));
         while($donnees = mysqli_fetch_array($reponse))
         {
             $result = new utilisateur($donnees['ID'],$donnees['Login'],$donnees['nom'],$donnees['prenom'],$donnees['mail'],$donnees['mdp'],$donnees['dateInscription'],$donnees['valide'],$donnees['nbSignalement']);

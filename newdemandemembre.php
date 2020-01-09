@@ -8,7 +8,7 @@ require_once("groupeFactory.php");
 $email = $_POST["email"];
 $idGroupe = $_POST["idGroupe"];
 
-$utilisateur = utilisateurFactory::charger($email);
+$utilisateur = utilisateurFactory::chercher($email);
 $groupe = groupeFactory::charger($idGroupe);
 
 
@@ -16,7 +16,6 @@ if($utilisateur == false)
 {
 	$mail = emailFactory::emailInvitationInscriptionGroupe($email,$groupe);
 	$mail->envoyer();	
-	echo "Envoyé !";
 }
 else
 {
@@ -24,7 +23,6 @@ else
 	{
 		$mail = emailFactory::emailInvitationGroupe($utilisateur,$groupe);
 		$mail->envoyer();	
-		echo "Envoyé !";
 	}
 	else
 	{
@@ -32,7 +30,7 @@ else
 	}
 }
 
-header("Refresh:3; url=accueil.php");
+header("Refresh:10; url=/projet/projet-tutore/voirgroupeadmin.php?iddugroupe=".$idGroupe);
 
 
 ?>

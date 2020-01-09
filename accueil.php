@@ -1,8 +1,9 @@
 <?php
 require_once("connect.php");
 
-require_once("utilisateur.php");
 require_once("utilisateurFactory.php");
+require_once("listeGroupeFactory.php");
+require_once("emailFactory.php");
 
 if($idConnecte==-1){
     header("Location:home.php");
@@ -13,91 +14,109 @@ if($idConnecte==-1){
 
 <!doctype html>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <title>accueil </title>
-        <link rel="stylesheet" type="text/css" href="css2.css" />
-    </head>
+    <?php
+    $titrePage="Accueil";
+    require_once('head.php');
+    ?>
     <body>
-        <?php
-        require_once("listeGroupeFactory.php");
-        require_once("listeGroupe.php");
-
-        require_once("email.php");
-        require_once("emailFactory.php");
-
-        
-        ?>
-		
-		<?php $utilisateur= utilisateurFactory::charger($idConnecte); 
-$Nom= $utilisateur->getNom(); 
-$prenom= $utilisateur->getPrenom(); 
+        <div class="overboite">
+            <div class="boite">
 
 
-?>
-<h1>  Bienvenue <?php echo "$Nom $prenom" ?> </h1>
+        		<?php
+                $utilisateur= utilisateurFactory::charger($idConnecte); 
+                $Nom= $utilisateur->getNom(); 
+                $prenom= $utilisateur->getPrenom(); 
+                ?>
 
-		<h2> Vos groupes : </h2>
-        <?php
-        $listeGroupe = listeGroupeFactory::listeGroupesPourUtilisateur($idConnecte);
-        ?>
-        <table>
-            <tr>
-                <th>id</th>
-                <th>libelle</th>
-            </tr>
-            <?php  //On affiche les lignes du tableau une à une à l'aide d'une boucle
-            foreach ($listeGroupe->getGroupes() as $groupe)
-            {
-            ?>
-            <tr>
-                <td><?php echo $groupe->getId() ?></td>
-                <td><a href="voirgroupe.php?iddugroupe=<?php echo $groupe->getId() ?>"> <button> <?php echo $groupe->getNom() ?></button> </a> </td>
-               
-            </tr>
-            <?php } ?>
-        </table>
-		
-		
-		
-		<h2> Groupes possédés: </h2>
-        <?php
-        $listeGroupe = listeGroupeFactory::listeGroupesPossedeParUtilisateur($idConnecte);
-        ?>
-        <table>
-            <tr>
-                <th>id</th>
-                <th>libelle</th>
-            </tr>
-            <?php  //On affiche les lignes du tableau une à une à l'aide d'une boucle
-            foreach ($listeGroupe->getGroupes() as $groupe)
-            {
-            ?>
-            <tr>
-                <td><?php echo $groupe->getId() ?></td>
-                <td><a href="voirgroupeadmin.php?iddugroupe=<?php echo $groupe->getId() ?>"> <button> <?php echo $groupe->getNom() ?></button> </a> </td>
-               
-            </tr>
-            <?php } ?>
-        </table>
-		
-		<a href="/projet/projet-tutore/deconnexion.php">Se déconnecter</a>
-		<a href="/projet/projet-tutore/creergroupe.php">Créer un groupe</a>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+                <h1>  Bienvenue <?php echo "$Nom $prenom" ?> </h1>
 
+                <div class="segmenttable">
+
+            		<h2> Vous participez à : </h2>
+                    <?php
+                    $listeGroupe = listeGroupeFactory::listeGroupesPourUtilisateur($idConnecte);
+                    ?>
+                    <table class="tablelargeurmax">
+<!--                        <tr>
+                            <th class="thtdlargeur50">id</th>
+                            <th class="thtdlargeur50">libelle</th>
+                        </tr> -->
+                        <?php  //On affiche les lignes du tableau une à une à l'aide d'une boucle
+                        foreach ($listeGroupe->getGroupes() as $groupe)
+                        {
+                        ?>
+                            <tr>
+<!--                                <td class="thtdlargeur50"><?php //echo $groupe->getId() ?></td>  -->
+                                <td class="thtdlargeur50"><a href="voirgroupe.php?iddugroupe=<?php echo $groupe->getId() ?>"> <button class="bouttonarrondi_blanc"> <?php echo $groupe->getNom() ?></button> </a> </td>
+                               
+                            </tr>
+                        <?php
+                        }
+                        if(count($listeGroupe->getGroupes()) == 0)
+                        {
+                            ?>
+                            <tr>
+<!--                                <td class="thtdlargeur50">Aucun</td> -->
+                                <td class="thtdlargeur50">Aucun</td>
+                            </tr> 
+
+                            <?php
+                        }
+                        ?>
+                    </table>
+
+                </div>    		
+        		
+                <div class="segmenttable">
+
+            		<h2> Vous administrez: </h2>
+                    <?php
+                    $listeGroupe = listeGroupeFactory::listeGroupesPossedeParUtilisateur($idConnecte);
+                    ?>
+                    <table class="tablelargeurmax">
+<!--                        <tr>
+                            <th class="thtdlargeur50">id</th>
+                            <th class="thtdlargeur50">libelle</th>
+                        </tr>  -->
+                        <?php  //On affiche les lignes du tableau une à une à l'aide d'une boucle
+                        foreach ($listeGroupe->getGroupes() as $groupe)
+                        {
+                        ?>
+                        <tr>
+<!--                            <td class="thtdlargeur50"><?php //echo $groupe->getId() ?></td> -->
+                            <td class="thtdlargeur50"><a href="voirgroupeadmin.php?iddugroupe=<?php echo $groupe->getId() ?>"> <button class="bouttonarrondi_blanc"> <?php echo $groupe->getNom() ?></button> </a> </td>
+                           
+                        </tr>
+                        <?php
+                        }
+                        if(count($listeGroupe->getGroupes()) == 0)
+                        {
+                            ?>
+                            <tr>
+<!--                                <td class="thtdlargeur50">Aucun</td> -->
+                                <td class="thtdlargeur50">Aucun</td>
+                            </tr> 
+
+                            <?php
+                        }
+                        ?>
+                    </table>
+                </div>
+                <div class="segmenttable">
+                    <table class="tablelargeurmax">
+                        <tr>
+                            <td class="thtdlargeur50"><a class="bouttonarrondi" href="/projet/projet-tutore/deconnexion.php">Se déconnecter</a></td>
+                            <td class="thtdlargeur50"><a class="bouttonarrondi" href="/projet/projet-tutore/creergroupe.php">Créer un groupe</a></td>                            
+                        </tr>
+                    </table>
+                </div>
+                
+                
+
+
+            </div>
+        </div>
     </body>
 
 </html>

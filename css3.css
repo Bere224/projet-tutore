@@ -1,0 +1,303 @@
+body{
+	color:black;
+	background:url(test.jpg);
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+	background-size: 1950px 970px;  
+}
+
+.boite h1{
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.boite, .boitelarge, .boitecoupeegauche, .boitecoupeedroite,.boitecoupeegauche_mirroir, .boitecoupeedroite_mirroir{
+    min-width : 400px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 30px;
+    border: 1px solid #f1f1f1;
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    text-align: center;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.boitelarge{
+    min-width : 80%;
+}
+
+.overboite, .overboite_flexvertical{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.overboite_flexvertical{
+	flex-direction: column;
+}
+
+.boitecoupeegauche, .boitecoupeedroite_mirroir{
+	width: 20%;
+	margin-right: 50px;
+}
+
+.boitecoupeedroite, .boitecoupeegauche_mirroir{
+	width: 70%;
+}
+
+.tablelargeurmax{
+	width: 100%;
+}
+
+.thtdlargeur50{
+	width: 50%;
+}
+.thtdlargeur33{
+	width: 33.3%;
+}
+
+.thtdlargeur20{
+	width: 20%;
+}
+
+.thtdlargeur25{
+	width: 25%;
+}
+
+.segmenttable, .proposegment{
+	margin-top: 50px;
+	background-color: #eeeeee;
+	padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.proposegment_pas_padding{
+	padding: 0;
+}
+
+.proposegment label{
+	margin-top: 10px;
+	margin-bottom: 5px;
+	display: block;
+}
+
+.segmenttable_moinsdemarge{
+	margin-top: 20px;
+}
+
+.segmenttable h2{
+	margin: 0 0;
+	margin-bottom: 40px;
+}
+
+.segmenttable th{
+  padding-bottom: 50px;
+ }
+
+.segmenttable_pilevertial{
+	height: 100%;
+	width: 90%;
+}
+
+.segmenthauteurmax{
+	height: 100%;
+}
+
+.bouttonarrondi, .bouttonarrondi_signaler, .bouttonarrondi_alternatif, .bouton_liste_propo, .bouton_liste_propo_supprimer, .bouton_liste_propo_titre, .propo_titre, .bouttonarrondi_blanc{
+	background-color: #53af57;
+    color: white;
+    padding: 13px 0px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 12px;
+    text-align: center;
+    display: block;
+	text-decoration: none;
+}
+
+.bouttonarrondi_signaler{
+	background-color: #dd0000;
+    width: 40%;
+    margin: 30px auto;
+}
+
+.bouttonarrondi_alternatif{
+	background-color: #0000ee;	
+	font-size: 12px;
+	color: white;
+}
+
+.bouttonarrondi_blanc{
+	background-color: #ffffff;	
+	font-size: 12px;
+	color: black;
+	border: 1px solid #cccccc;
+}
+
+.labelinputtext{
+
+}
+.inputtext{
+	margin: 10px 0;
+	padding: 5px 5px;
+    border-radius: 3px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.form_espacement{
+	text-align: center;
+}
+
+.form_espacement input{
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+.form_espacement textarea{
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+
+.form_espacement label{
+	margin-top: 10px;
+	margin-bottom: 0px;
+	display: block;
+	font-family: monospace;	
+	font-size: 16px;
+	font-style: bold;
+}
+
+
+.form_espacement_label_gauche label{
+	text-align: left;
+	font-family: monospace;	
+	font-size: 16px;
+	font-weight: bold;
+}
+
+
+.input_flex_largeur{
+	width:50%;
+}
+html,body{
+	height: 100%;
+}
+
+
+.form_pas_espacement label{
+	margin-top: 0px;
+}
+
+.limitelargeur50{
+	width: 50%;
+	margin: auto;
+}
+
+
+.propo_catprinc{
+	padding: 5px 5px;
+	width: 60%;
+	background-color: #ffdddd;
+}
+
+.propo_catsec{
+	padding: 5px 5px;
+	width: 40%;
+	background-color: #ffeeee;
+}
+
+.propo_resultat_overboite{
+	margin: 10px 10px;
+}
+
+.propo_commentaires{
+	width: 80%;
+	background-color: #eeeeee;
+	margin: auto;
+	padding: 10px 30px;
+    border-radius: 12px;
+}
+
+.propo_un_commentaire{
+	margin-bottom: 30px;
+	background-color: #ffffff;
+    border-radius: 12px;
+    padding: 1px;
+}
+
+.commentaire_nom{
+	font-size: 30px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+.bigtextinput{
+	height: 100px;
+}
+
+.bouton_liste_propo, .bouton_liste_propo_supprimer, .bouton_liste_propo_titre{
+	width: 100%;	
+	color: #ffffff;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.bouton_liste_propo_supprimer{
+	background-color: #ffffff;
+	color: #FF0000;
+}
+
+.bouton_liste_propo_titre{
+	font-size: 20px;
+	font-style: bold;
+}
+
+.propo_titre{
+
+}
+
+.home_boutton{
+	margin: 10px 0px;
+}
+
+a{
+	text-decoration: none;
+}
+
+.homebutton, .retourbutton{
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	width: 50px;
+	height: 50px;
+    border-radius: 20px;
+    background-image: url("/projet/projet-tutore/home.png");
+	background-color: #0000ff;
+	margin: 0 0;
+	display: block;
+}
+
+.retourbutton{
+    background-image: url("/projet/projet-tutore/back.png");
+}
+
+.div_voirsignalements{
+	width: 80%;
+}
+
+.logo_upsud{
+	background-repeat: no-repeat;
+	background-position: center; 
+	background-color: white;
+    background-image: url("/projet/projet-tutore/logo-upsud.jpg");
+    position: fixed;
+    width: 186px;
+    height: 177px;
+    left: 10px;
+    bottom: 10px;
+}

@@ -14,7 +14,7 @@ $idGroupe = $_POST['idGroupe'];
 
 
 
-if($_POST['datechoix'] = 'sans')
+if($_POST['datechoix'] == 'sans')
 {
 	$datedecloture = '1999-01-01';
 }
@@ -27,6 +27,6 @@ if($propo != false)
 }
 
 
+header('Location: /projet/projet-tutore/voirgroupeadmin.php?iddugroupe='.$idGroupe);
 
-header('Location: accueil.php');
 ?>

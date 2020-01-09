@@ -2,39 +2,37 @@
 require_once("connect.php");
 ?>
 
+<?php 
+    $titrePage="Rejoignez nous !";
+
+?>
+
+
 <!doctype html>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <title>accueil </title>
-        <link rel="stylesheet" type="text/css" href="css2.css" />
-    </head>
-    <body>
-        <div id="container">
-            <!-- zone de connexion -->
-            <form action="newconnection.php" method="POST">
-                <h1>Connexion</h1>
-                
-                <label><b>Nom d'utilisateur</b></label>
-                <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
+  <?php
+  $titrePage="Rejoignez-nous";
+  require_once('head.php');
+  ?>
+  <body>
+    <div class="overboite">
+        <div class="boite">
+          <form method = "post" action="newconnection.php">
+            <h1>Connexion</h1>
+            <div class="form_espacement form_espacement_label_gauche">
+                <label for="nom" class="inputlabel">Nom d'utilisateur</label>
+                <input type = "text" name="username" class="inputtext" autocomplete = "on" placeholder="Nom" autofocus required>
 
-                <label><b>Mot de passe</b></label>
-                <input type="password" placeholder="Entrer le mot de passe" name="password" required>
+                <label for="password">mot de passe </label>
+                <input type="password" name ="password" class= "inputtext" placeholder="Mot de passe" required>
 
-                <input type="submit" id='submit' value='LOGIN' >
-                <?php
-                if(isset($_GET['erreur'])){
-                    $err = $_GET['erreur'];
-                    if($err==1 || $err==2)
-                        echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
-                }
-                ?>
-                <div class="text-center">
-                  <a class="small" href="inscription.php">Créer un compte</a>
-                </div>
-            </form>
-        </div>
-      </section>
-    </body>
+                <input type="submit" id='submit' class="bouttonarrondi" value='valider' >
+              </div>
+          </form>
+          <a class="bouttonarrondi_alternatif" href="inscription.php">Créer un compte</a>
+      </div>
+    </div>
+  </body>
 
 </html>
+

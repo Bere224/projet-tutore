@@ -51,7 +51,7 @@ class categorie {
 			return $donnees['nom'];
 	    }
 
-		return 'Aucun';
+		return 'Aucune';
     }
 
 }

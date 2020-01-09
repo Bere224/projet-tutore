@@ -18,6 +18,6 @@ if($cat != false)
 }
 
 
-header('Location: accueil.php');
+header('Location: /projet/projet-tutore/voirgroupeadmin.php?iddugroupe='.$idGroupe);
 
 ?>
