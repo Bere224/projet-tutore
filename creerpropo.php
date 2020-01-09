@@ -67,8 +67,15 @@ require_once("listeCategorieFactory.php");
 				<input type="date" name="datedecloture">
 				<br/>
 				<br/>
-				<button class="button" type="submit" Value="créer"></button>
+				</div>
+					<br/>
+				<br/>
+					<br/>
+				<br/>
+					<br/>
+				<br/>
+				<button type="submit" Value="créer"></button>
 			</form>
-		</div>
+		
     </body>
 </html>
