@@ -9,7 +9,7 @@ class voteFactory {
 		global $co;
 
 
-		$reponse = mysqli_query($co, "SELECT * FROM vote WHERE ID=$idUtilisateur AND IDPropo=$idProposition") or die ("Exécution de la requête impossible".mysqli_error($co));
+		$reponse = mysqli_query($co, "SELECT * FROM vote WHERE ID='$idUtilisateur' AND IDPropo='$idProposition'") or die ("Exécution de la requête impossible".mysqli_error($co));
 		while($donnees = mysqli_fetch_array($reponse))
 		{
 			return false;

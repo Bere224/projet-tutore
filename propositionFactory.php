@@ -11,7 +11,7 @@ class propositionFactory {
 
         $prop = new proposition(0,$nom ,$descriptionCourte, $descriptionLongue, $idCategoriePrimaire, $idCategorieSecondaire, 0, $dateLimite, 0, date('Y-m-d'),$idUtilisateur,$idGroupe);
 
-        $reponse = mysqli_query($co, "SELECT * FROM proposition WHERE nompropo=$nom AND IDGroupe=$idGroupe") or die ("Exécution de la requête impossible".mysqli_error($co));
+        $reponse = mysqli_query($co, "SELECT * FROM proposition WHERE nompropo='$nom' AND IDGroupe='$idGroupe'") or die ("Exécution de la requête impossible".mysqli_error($co));
         while($donnees = mysqli_fetch_array($reponse))
         {
             return false;
