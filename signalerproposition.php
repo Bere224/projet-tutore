@@ -10,4 +10,4 @@ $propo->setNbSignalement($propo->getNbSignalement()+1);
 
 $propo->modifier_dans_db();
 
-header("Refresh:0; url=accueil.php");
+header("Refresh:0; url=/projet/projet-tutore/voirpropo.php?idPropo=".$propo->getId());
