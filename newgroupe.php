@@ -20,7 +20,7 @@ if($group != false)
 }
 
 
-header('Location: creerpropo.php');
+header('Location: accueil.php');
 
 
 
