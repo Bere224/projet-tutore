@@ -6,6 +6,8 @@ class groupeFactory {
 
     public static function creerGroupe($nom,$idUtilisateur)
     {
+		global $co;
+
         $reponse = mysqli_query($co, "SELECT * FROM groupe WHERE libelle=$nom AND ID=$idUtilisateur") or die ("Exécution de la requête impossible".mysqli_error($co));
         while($donnees = mysqli_fetch_array($reponse))
         {
